@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText myMessage;
     private Button previewBtn;
     public static final String EXTRA_MESSAGE = "EXTRA_MESS";
+    public static Button myCardBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         hint = (TextView)findViewById(R.id.text_hint);
         myMessage = (EditText)findViewById(R.id.my_msg);
         previewBtn = (Button)findViewById(R.id.open_sec_activity_btn);
+        myCardBtn = (Button)findViewById(R.id.open_my_profile);
 
 
         previewBtn.setOnClickListener(new View.OnClickListener() {
@@ -32,6 +34,20 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        myCardBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openMyCard();
+            }
+        });
+
+
+    }
+
+    private void openMyCard() {
+        Intent intent = new Intent(this, MyCardActivity.class );
+        startActivity(intent);
     }
 
 

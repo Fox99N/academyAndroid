@@ -5,4 +5,14 @@
     <string name="email_btn">EMAIL</string>
     <string name="text_email_header">My opinion about app</string>
     <string name="my_mail_address">n.zales99@gmail.com</string>
+    <string name="enter_yore_message">Enter yore message</string>
+    <string name="send_message_text_btn">SEND MESSAGE</string>
+    <string name="big_info_about_me">Some text about bl bla blab lllllllllllll
+    lllllllllllllllllllllllllllllllllllllllllllllllll
+    llllllllllllllllllllllllllllllllllllllllllllllll
+    llllllllllllllllllllllllllllllllllllllllllllllll
+    llllllllllllllllllllllllllllllllllllllllllllllll</string>
+    <string name="company_info">Analytics in some company</string>
+    <string name="my_goal_text">I study on the android developer</string>
+    <string name="love_sport_text">I love sports</string>
 </resources>
