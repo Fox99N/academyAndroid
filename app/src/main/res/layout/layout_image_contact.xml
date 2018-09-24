@@ -3,29 +3,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:weightSum="6">
-
-
-    <ImageView
-        android:id="@+id/img_cont_mail"
-        android:layout_width="@dimen/img_little_size"
-        android:layout_height="@dimen/img_little_size"
-        android:layout_marginRight="5dp"
-        android:layout_weight="1" />
-
+    android:layout_marginBottom="20dp">
 
     <ImageView
         android:id="@+id/img_cont_telega"
         android:layout_width="@dimen/img_little_size"
         android:layout_height="@dimen/img_little_size"
-        android:layout_marginRight="5dp"
-        android:layout_weight="1" />
+        android:layout_marginRight="@dimen/margin_right_small_icon"
+        android:background="@drawable/telegram" />
+
+    <ImageView
+        android:id="@+id/img_cont_mail"
+        android:layout_width="@dimen/img_little_size"
+        android:layout_height="@dimen/img_little_size"
+        android:layout_marginRight="@dimen/margin_right_small_icon"
+        android:background="@drawable/gmail" />
+
 
     <ImageView
         android:id="@+id/img_cont_instag"
         android:layout_width="@dimen/img_little_size"
         android:layout_height="@dimen/img_little_size"
-        android:layout_marginRight="5dp"
-        android:layout_weight="1" />
+        android:layout_marginRight="@dimen/margin_right_small_icon"
+        android:background="@drawable/github" />
 
 </LinearLayout>
