@@ -9,6 +9,7 @@
     tools:context="com.fox.academy_lesson1.MyCardActivity">
 
     <ImageView
+        android:id="@+id/photo"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:layout_weight="1"
@@ -62,6 +63,7 @@
 
 
         <EditText
+            android:id="@+id/typed_msg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/enter_yore_message"
@@ -69,6 +71,7 @@
             android:textColorHint="@color/colorAccent"/>
 
         <Button
+            android:id="@+id/send_email_browser"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/btn_small_size"
             android:layout_gravity="right"

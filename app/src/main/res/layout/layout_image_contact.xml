@@ -5,23 +5,23 @@
     android:orientation="horizontal"
     android:layout_marginBottom="20dp">
 
-    <ImageView
+    <ImageButton
         android:id="@+id/img_cont_telega"
         android:layout_width="@dimen/img_little_size"
         android:layout_height="@dimen/img_little_size"
         android:layout_marginRight="@dimen/margin_right_small_icon"
         android:background="@drawable/telegram" />
 
-    <ImageView
-        android:id="@+id/img_cont_mail"
+    <ImageButton
+        android:id="@+id/img_cont_instagram"
         android:layout_width="@dimen/img_little_size"
         android:layout_height="@dimen/img_little_size"
         android:layout_marginRight="@dimen/margin_right_small_icon"
-        android:background="@drawable/gmail" />
+        android:background="@drawable/instagram" />
 
 
-    <ImageView
-        android:id="@+id/img_cont_instag"
+    <ImageButton
+        android:id="@+id/img_cont_github"
         android:layout_width="@dimen/img_little_size"
         android:layout_height="@dimen/img_little_size"
         android:layout_marginRight="@dimen/margin_right_small_icon"
