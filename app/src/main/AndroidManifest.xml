@@ -17,7 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".SecondActivity" />
-        <activity android:name=".MyCardActivity"></activity>
+        <activity android:name=".MyCardActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden">
+        </activity>
     </application>
 
 </manifest>

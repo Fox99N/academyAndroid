@@ -30,8 +30,8 @@ public class MyCardActivity extends AppCompatActivity implements View.OnClickLis
     private ImageButton openTelegramm;
     private ImageButton openGitHub;
     private ImageButton openInstagram;
-    public  String msg;
-    public final String EMAIL = getString(R.string.my_mail_address);
+    public String msg;
+    public String email;
     public String subject;
     public String parseLink;
 
@@ -54,18 +54,23 @@ public class MyCardActivity extends AppCompatActivity implements View.OnClickLis
         openTelegramm = (ImageButton) findViewById(R.id.img_cont_telega);
         openInstagram = (ImageButton) findViewById(R.id.img_cont_instagram);
 
-        msg = typedText.toString();
+
         subject = getString(R.string.text_email_header);
+        sendEmailBrowserBtn.setOnClickListener(this);
+        openTelegramm.setOnClickListener(this);
+        openGitHub.setOnClickListener(this);
+        openInstagram.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
+        email = getString(R.string.my_mail_address);
+        msg = typedText.toString();
         switch (v.getId()) {
 
-
             case R.id.send_email_browser:
-                parseLink = "https://mail.google.com/mail/u/0/?tab=wm#inbox" + EMAIL;
-                openMyContact(parseLink);
+                parseLink = "https://mail.google.com/mail/u/0/?tab=wm#inbox" + email;
+               sendMessage(parseLink);
                 break;
 
             case R.id.img_cont_github:
@@ -81,25 +86,25 @@ public class MyCardActivity extends AppCompatActivity implements View.OnClickLis
 
             case R.id.img_cont_instagram:
                 parseLink = "https://www.instagram.com/?hl=ru";
-
+                openMyContact(parseLink);
                 break;
 
         }
 
     }
 
-    public void  openMyContact(String parse){
+    public void openMyContact(String parse) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(parse));
         startActivity(intent);
     }
 
-  /*  private void sendMessage() {
-        Intent sendIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto: " + EMAIL));
-        sendIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
-        sendIntent.putExtra(Intent.EXTRA_TEXT, msg);
-        startActivity(Intent.createChooser(sendIntent, "Send letter"));
-    }
-*/
+     private void sendMessage(String parse) {
+          Intent sendIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(parse));//еще доделываю чтоб адресат ставился и текст сохранялся
+          sendIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
+          sendIntent.putExtra(Intent.EXTRA_TEXT, msg);
+          startActivity(Intent.createChooser(sendIntent, "Send letter"));
+      }
+
     @Override
     protected void onResume() {
         super.onResume();
