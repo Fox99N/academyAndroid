@@ -9,78 +9,90 @@
     tools:context="com.fox.academy_lesson1.MyCardActivity">
 
 
-    <ImageView
-        android:id="@+id/photo"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_weight="1"
-        android:background="@drawable/my_photo_i" />
-
-
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <LinearLayout
+
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="@dimen/margin_left"
-            android:layout_marginRight="@dimen/margin_right_bottom"
-            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
 
-            <include
-                layout="@layout/layout_info_about_me"
+            <ImageView
+                android:id="@+id/photo"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="@dimen/image_big_size"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@drawable/my_photo_i" />
 
-            <View
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/colorAccent" />
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:layout_marginRight="@dimen/margin_right_bottom"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
 
-            <TextView
-                android:id="@+id/text_description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/big_info_about_me"
-                android:textSize="@dimen/text_small_size" />
+                <include
+                    layout="@layout/layout_info_about_me"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorAccent" />
 
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/colorAccent" />
+                <TextView
+                    android:id="@+id/text_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/big_info_about_me"
+                    android:textSize="@dimen/text_small_size" />
 
 
-            <EditText
-                android:id="@+id/typed_msg"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/enter_yore_message"
-                android:textColorHint="@color/colorAccent"
-                android:textSize="@dimen/text_small_size" />
-
-            <Button
-                android:id="@+id/send_email_browser"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/btn_small_size"
-                android:layout_gravity="right"
-                android:background="@color/colorWhite"
-                android:text="@string/send_message_text_btn"
-                android:textColor="@color/colorAccent"
-                android:textSize="@dimen/btn_small_text" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorAccent" />
 
 
-            <include
-                layout="@layout/layout_image_contact"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center" />
+                <EditText
+                    android:id="@+id/typed_msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/enter_yore_message"
+                    android:textColorHint="@color/colorAccent"
+                    android:textSize="@dimen/text_small_size" />
 
+                <Button
+                    android:id="@+id/send_email_browser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/btn_small_size"
+                    android:layout_gravity="right"
+                    android:background="@color/colorWhite"
+                    android:text="@string/send_message_text_btn"
+                    android:textColor="@color/colorAccent"
+                    android:layout_marginBottom="@dimen/margin_bottom_middle"
+                    android:textSize="@dimen/btn_small_text" />
+
+
+                <include
+                    layout="@layout/layout_image_contact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small_elements"
+                    android:layout_gravity="center|bottom" />
+
+
+            </LinearLayout>
 
         </LinearLayout>
 
