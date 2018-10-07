@@ -33,8 +33,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/margin_left"
-                android:layout_marginRight="@dimen/margin_right_bottom"
+                android:layout_marginStart="@dimen/margin_left"
+                android:layout_marginEnd="@dimen/margin_right_bottom"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
@@ -65,7 +65,7 @@
 
 
                 <EditText
-                    android:id="@+id/typed_msg"
+                    android:id="@+id/input_message"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/enter_yore_message"
@@ -73,7 +73,7 @@
                     android:textSize="@dimen/text_small_size" />
 
                 <Button
-                    android:id="@+id/send_email_browser"
+                    android:id="@+id/btn_send_email"
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/btn_small_size"
                     android:layout_gravity="right"
