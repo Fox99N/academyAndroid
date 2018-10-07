@@ -48,11 +48,11 @@ public class MyCardActivity extends AppCompatActivity implements View.OnClickLis
         textskill2 = (TextView) findViewById(R.id.text_skill2);
         textskill3 = (TextView) findViewById(R.id.text_skill3);
         bigInfo = (TextView) findViewById(R.id.text_description);
-        typedText = (EditText) findViewById(R.id.typed_msg);
-        sendEmailBrowserBtn = (Button) findViewById(R.id.send_email_browser);
-        openGitHub = (ImageButton) findViewById(R.id.img_cont_github);
-        openTelegramm = (ImageButton) findViewById(R.id.img_cont_telega);
-        openInstagram = (ImageButton) findViewById(R.id.img_cont_instagram);
+        typedText = (EditText) findViewById(R.id.input_message);
+        sendEmailBrowserBtn = (Button) findViewById(R.id.send_mail_btn);
+        openGitHub = (ImageButton) findViewById(R.id.img_open_github);
+        openTelegramm = (ImageButton) findViewById(R.id.img_open_telega);
+        openInstagram = (ImageButton) findViewById(R.id.img_open_instagram);
 
 
         subject = getString(R.string.text_email_header);
@@ -68,23 +68,23 @@ public class MyCardActivity extends AppCompatActivity implements View.OnClickLis
         msg = typedText.toString();
         switch (v.getId()) {
 
-            case R.id.send_email_browser:
+            case R.id.send_mail_btn:
                 parseLink = "https://mail.google.com/mail/u/0/?tab=wm#inbox" + email;
                sendMessage(parseLink);
                 break;
 
-            case R.id.img_cont_github:
+            case R.id.img_open_github:
                 parseLink = "https://github.com/";
                 openMyContact(parseLink);
                 break;
 
-            case R.id.img_cont_telega:
+            case R.id.img_open_telega:
                 parseLink = "https://telegram.com";
                 openMyContact(parseLink);
                 break;
 
 
-            case R.id.img_cont_instagram:
+            case R.id.img_open_instagram:
                 parseLink = "https://www.instagram.com/?hl=ru";
                 openMyContact(parseLink);
                 break;

@@ -17,4 +17,7 @@
     <dimen name="margin_small_elements">8dp</dimen>
     <dimen name="margin_small_elements_wtf">10dp</dimen>
     <dimen name="image_big_size">250dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="list_item_padding">4dp</dimen>
+    <dimen name="image_small_size">100dp</dimen>
 </resources>

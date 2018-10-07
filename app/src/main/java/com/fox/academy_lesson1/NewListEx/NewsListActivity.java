@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.fox.academy_lesson1.R;
 
-public class NewsList extends AppCompatActivity {
+public class NewsListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

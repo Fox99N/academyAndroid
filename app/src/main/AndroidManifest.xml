@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.fox.academy_lesson1">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <meta-data
+        android:name="android.support.VERSION"
+        android:value="26.1.0"
+        tools:replace="android:value" />
 
     <application
         android:allowBackup="true"
@@ -10,7 +17,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,8 +27,12 @@
         <activity android:name=".SecondActivity" />
         <activity
             android:name=".MyCardActivity"
-            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
-        <activity android:name=".NewListEx.NewsList"></activity>
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity android:name=".NewListEx.NewsListActivity" />
+        <activity
+            android:name=".item_news_activity"
+            android:label="@string/title_activity_item_news_activity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -13,4 +13,32 @@
     <string name="company_info"> Analyst in some company</string>
     <string name="my_goal_text"> I want to be the android developer</string>
     <string name="love_sport_text"> I love sports</string>
+    <string name="category_panda">Panda World</string>
+    <string name="category_robots">Robot News</string>
+    <string name="category_augmented_reality">Augmented reality</string>
+    <string name="category_fun">Let\'s fun</string>
+    <string name="preview_text_panda">During mating season, the solitary mammals bleat important information to each other through their dense bamboo habitat.</string>
+    <string name="full_text_panda">For solitary animals, giant pandas have an awful lot to say to one another. Their vocal repertoire comprises more than a dozen
+     distinct grunts, barks and squeaks, most of which amount to some version of “leave me alone.”
+
+        But when mating season rolls around, both male and female giant pandas turn to their preferred
+        come-hithercall: a husky, rapid vibrato that’s commonly known as the bleat.
+        The bleat not only alerts other pandas to the presence of an available mate, it contains important information about the vocalist’s size and identity.
+        Given the dense bamboo thicket that limits visual contact in most panda habitats and the brevity of panda mating season — females ovulate just
+        once a year and can conceive for only a few days — the pandas’ ability to perceive the bleat is critical to reproduction among this once-endangered species.
+
+        Now, researchers have determined that the bleat works best as a local call. A panda can discern aspects of a caller’s identity. like its size, from a bleat within about
+        65 feet, but the caller’s gender is only perceptible within about 33 feet, according to a study published Thursday in Scientific Reports.
+        Megan Owen, a conservation ecologist at the San Diego Zoo Institute for Conservation Research and an author of the study, offered a human analogy for how this ability works.
+        “If you’re walking into a crowded room and someone calls out your name, there’s a certain point where you can identify who that is, or maybe you can identify that it’s a male
+        or female that is calling your name,” she said. “There’s information that’s encoded in that call, but that information degrades over distance.”
+        [Like the Science Times page on Facebook. | Sign up for the Science Times newsletter.]
+        To conduct the study, Dr. Owen and her colleagues — including Ben Charlton, another San Diego institute researcher who has studied panda bleats — obtained recordings of giant
+        pandas from Chengdu, China, during breeding season. They then played those recordings through a speaker in a section of the San Diego Zoo Safari Park that contains bamboo similar
+        in type and density to a typical panda habitat. By placing recording devices throughout the bamboo, the researchers were able to capture and analyze the bleats from various distances.EDITORS’ PICKS
+        How Connected Is Your Community to Everywhere Else in America?
+ </string>
+    <string name="title_activity_item_news_activity">item_news_activity</string>
+
+
 </resources>
