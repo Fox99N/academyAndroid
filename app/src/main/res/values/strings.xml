@@ -39,6 +39,9 @@
         How Connected Is Your Community to Everywhere Else in America?
  </string>
     <string name="title_activity_item_news_activity">item_news_activity</string>
+    <string name="news_btn">NEWS</string>
+    <string name="my_card_btn">MY CARD</string>
+    <string name="preview_btn">PREVIEW</string>
 
 
 </resources>

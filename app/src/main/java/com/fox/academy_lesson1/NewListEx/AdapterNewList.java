@@ -60,7 +60,7 @@ public class AdapterNewList extends RecyclerView.Adapter<AdapterNewList.ViewHold
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = layoutInflater.inflate(R.layout.new_items_list, parent, false);
 
         return new ViewHolder(view);

@@ -1,5 +1,9 @@
 package com.fox.academy_lesson1.NewListEx;
 
+import android.content.res.Resources;
+
+import com.fox.academy_lesson1.R;
+
 import java.util.Date;
 
 /**
@@ -10,12 +14,12 @@ public class NewsItem {
 
     private final String title;
     private final String imageUrl;
-    private final Category category;
+    private final String category;
     private final Date publishDate;
     private final String previewText;
     private final String fullText;
 
-    public NewsItem(String title, String imageUrl, Category category, Date publishDate, String previewText, String fullText) {
+    public NewsItem(String title, String imageUrl, String category, Date publishDate, String previewText, String fullText) {
         this.title = title;
         this.imageUrl = imageUrl;
         this.category = category;
@@ -32,7 +36,7 @@ public class NewsItem {
         return imageUrl;
     }
 
-    public Category getCategory() {
+    public String getCategory() {
         return category;
     }
 
@@ -48,21 +52,22 @@ public class NewsItem {
         return fullText;
     }
 
-    public static class Category {
-    private final int id;
-    private final String name;
+    public class Category {
+        private final int id;
+        private final String name;
 
-    public Category(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+        public Category(int id, String name) {
+            this.id = id;
+            this.name = name;
+        }
 
-    public int getId() {
-        return id;
-    }
+        public int getId() {
+            return id;
+        }
 
-    public String getName() {
-        return name;
+        public String getName() {
+            return name;
+        }
     }
-  }
 }
+

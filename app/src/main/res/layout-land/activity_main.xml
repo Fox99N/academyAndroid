@@ -31,12 +31,37 @@
 
     <Button
         android:id="@+id/open_sec_activity_btn"
-        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_width="@dimen/big_btn_size"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
-        android:text="PREVIEW"
+        android:text="@string/preview_btn"
         android:layout_weight="0"
         android:textSize="@dimen/btn_text"
         />
+    <Button
+        android:id="@+id/open_my_profile_btn"
+        android:layout_gravity="center"
+        android:layout_width="@dimen/big_btn_size"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:layout_marginTop="@dimen/elements_margin"
+        android:text="@string/my_card_btn"
+        android:layout_weight="0"
+        android:textSize="@dimen/btn_text"
+        />
+
+    <Button
+        android:id="@+id/watch_news_btn"
+        android:layout_gravity="center"
+        android:layout_width="@dimen/big_btn_size"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:layout_marginTop="@dimen/elements_margin"
+        android:text="@string/news_btn"
+        android:layout_weight="0"
+        android:textSize="@dimen/btn_text"
+        />
+
 
 </LinearLayout>

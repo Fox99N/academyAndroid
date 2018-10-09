@@ -20,4 +20,5 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="list_item_padding">4dp</dimen>
     <dimen name="image_small_size">100dp</dimen>
+    <dimen name="big_btn_size">300dp</dimen>
 </resources>
