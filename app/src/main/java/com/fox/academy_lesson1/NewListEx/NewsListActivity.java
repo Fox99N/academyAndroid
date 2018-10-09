@@ -20,7 +20,9 @@ public class NewsListActivity extends AppCompatActivity implements AdapterNewLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_list);
 
-         adapterNewList = new AdapterNewList(DataUtils.generateNews(this), this);
+        context =getApplicationContext();
+
+         adapterNewList = new AdapterNewList(DataUtils.generateNews(context), this);
          recyclerView = findViewById(R.id.recycler_news_list);
          recyclerView.setAdapter(adapterNewList);
          recyclerView.setLayoutManager(new LinearLayoutManager(this));

@@ -24,7 +24,7 @@ public class DataUtils {
 
         news.add(new NewsItem(
                 "Decoding Pandas’ Come-Hither Calls",
-                "https://www.gettyimages.com/detail/photo/panda-with-tongue-out-royalty-free-image/184987985",
+                context.getApplicationContext().getResources().getDrawable(R.drawable.panda).toString(),
                 context.getApplicationContext().getResources().getString(R.string.category_panda),
                 createDate(2018, 10, 5, 10, 26),
                 context.getApplicationContext().getResources().getString(R.string.preview_text_panda),
