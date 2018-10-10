@@ -1,8 +1,6 @@
 package com.fox.academy_lesson1.NewListEx;
 
-import android.content.res.Resources;
-
-import com.fox.academy_lesson1.R;
+import android.graphics.drawable.Drawable;
 
 import java.util.Date;
 
@@ -13,13 +11,13 @@ import java.util.Date;
 public class NewsItem {
 
     private final String title;
-    private final String imageUrl;
+    private final Drawable imageUrl;
     private final String category;
     private final Date publishDate;
     private final String previewText;
     private final String fullText;
 
-    public NewsItem(String title, String imageUrl, String category, Date publishDate, String previewText, String fullText) {
+    public NewsItem(String title, Drawable imageUrl, String category, Date publishDate, String previewText, String fullText) {
         this.title = title;
         this.imageUrl = imageUrl;
         this.category = category;
@@ -32,7 +30,7 @@ public class NewsItem {
         return title;
     }
 
-    public String getImageUrl() {
+    public Drawable getImageUrl() {
         return imageUrl;
     }
 

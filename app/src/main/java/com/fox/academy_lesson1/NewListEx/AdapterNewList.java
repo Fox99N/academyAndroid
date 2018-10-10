@@ -13,7 +13,9 @@ import android.widget.TextView;
 
 import com.fox.academy_lesson1.R;
 
+import java.text.DateFormat;
 import java.util.List;
+import java.util.zip.DataFormatException;
 
 /**
  * Created by fox on 30.09.18.
@@ -37,6 +39,7 @@ public class AdapterNewList extends RecyclerView.Adapter<AdapterNewList.ViewHold
         ImageView image;
         TextView author;
         TextView textHeader;
+        TextView previewText;
         TextView textDescription;
         TextView textData;
 
@@ -45,6 +48,7 @@ public class AdapterNewList extends RecyclerView.Adapter<AdapterNewList.ViewHold
             image = itemView.findViewById(R.id.news_img);
             author = itemView.findViewById(R.id.news_author_txt);
             textHeader = itemView.findViewById(R.id.news_header_txt);
+            previewText = itemView.findViewById(R.id.news_preview_txt);
             textDescription = itemView.findViewWithTag(R.id.news_descriptions_txt);
             textData = itemView.findViewById(R.id.news_data_txt);
             itemView.setOnClickListener(this);
@@ -69,11 +73,14 @@ public class AdapterNewList extends RecyclerView.Adapter<AdapterNewList.ViewHold
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         NewsItem newsItem = news.get(position);
-        holder.image.setImageResource(Integer.parseInt(newsItem.getImageUrl()));
-        holder.author.setText((CharSequence) newsItem.getCategory()); //FIXME скорее всего некорретно откастует, опнять почему к чару
+
         holder.textHeader.setText(newsItem.getTitle());
+        holder.image.setBackground(newsItem.getImageUrl());
+        holder.author.setText(newsItem.getCategory()); //FIXME скорее всего некорретно откастует, опнять почему к чару
+        holder.previewText.setText(newsItem.getPreviewText());
+        holder.textData.setText(newsItem.getPublishDate().toString());
         holder.textDescription.setText(newsItem.getFullText());
-        holder.textData.setText((CharSequence) newsItem.getPublishDate());
+
 
     }
 
@@ -83,7 +90,7 @@ public class AdapterNewList extends RecyclerView.Adapter<AdapterNewList.ViewHold
         return news.size();
     }
 
-    NewsItem getItem(int id){
+    NewsItem getItem(int id) {
         return news.get(id);
     }
 
