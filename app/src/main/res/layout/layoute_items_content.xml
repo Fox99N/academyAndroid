@@ -7,21 +7,21 @@
 
 
     <TextView
-        android:id="@+id/news_author_txt"
+        android:id="@+id/news_author_txt_full"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/text_size_medium"
         android:layout_gravity="start"/>
 
     <TextView
-        android:id="@+id/news_data_txt"
+        android:id="@+id/news_data_txt_full"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/text_size_medium"
         android:layout_gravity="start"/>
 
     <TextView
-        android:id="@+id/news_preview_txt"
+        android:id="@+id/news_preview_txt_full"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:maxLines="2"
@@ -29,7 +29,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/news_descriptions_txt"
+        android:id="@+id/news_descriptions_txt_full"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="2dp"

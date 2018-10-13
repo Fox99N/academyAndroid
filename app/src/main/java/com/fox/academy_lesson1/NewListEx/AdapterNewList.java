@@ -1,6 +1,8 @@
 package com.fox.academy_lesson1.NewListEx;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,12 +12,15 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.fox.academy_lesson1.R;
 
 import java.text.DateFormat;
 import java.util.List;
 import java.util.zip.DataFormatException;
+
+import static android.support.v4.content.ContextCompat.startActivity;
 
 /**
  * Created by fox on 30.09.18.
@@ -26,6 +31,7 @@ public class AdapterNewList extends RecyclerView.Adapter<AdapterNewList.ViewHold
     private final Context context;
     private final LayoutInflater layoutInflater;
     private ItemClickListener clickListener;
+    private final String ITEM_MESSAGE = "ITEM_MESSAGE";
 
     public AdapterNewList(List<NewsItem> news, Context context) {
         this.news = news;
@@ -72,8 +78,8 @@ public class AdapterNewList extends RecyclerView.Adapter<AdapterNewList.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        NewsItem newsItem = news.get(position);
+    public void onBindViewHolder(ViewHolder holder, final int position) {
+        final NewsItem newsItem = news.get(position);
 
         holder.author.setText(newsItem.getAuthor());
         holder.image.setBackground(newsItem.getImageUrl());
@@ -82,6 +88,24 @@ public class AdapterNewList extends RecyclerView.Adapter<AdapterNewList.ViewHold
         holder.textData.setText(newsItem.getPublishDate().toString());
         holder.textDescription.setText(newsItem.getFullText());
 
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openNewsActivity(position);
+
+            }
+        });
+
+    }
+
+
+    public void openNewsActivity(int position) {
+        Intent intent = new Intent(context, NewActivity2.class);
+        NewsItem newsItem = news.get(position);
+        Toast.makeText(context, " show " + newsItem, Toast.LENGTH_LONG).show();
+        intent.putExtra(ITEM_MESSAGE, (Parcelable) newsItem);
+        context.startActivity(intent);
 
     }
 

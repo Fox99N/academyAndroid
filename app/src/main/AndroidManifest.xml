@@ -29,10 +29,7 @@
             android:name=".MyCardActivity"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity android:name=".NewListEx.NewsListActivity" />
-        <activity
-            android:name=".item_news_activity"
-            android:label="@string/title_activity_item_news_activity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".NewListEx.NewActivity2"></activity>
     </application>
 
 </manifest>
