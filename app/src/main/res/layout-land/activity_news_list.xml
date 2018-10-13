@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.fox.academy_lesson1.NewListEx.NewsListActivity"
+    android:columnCount="2">
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_news_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="true"
+        android:layout_margin="4dp">
+    </android.support.v7.widget.RecyclerView>
+
+</GridLayout>

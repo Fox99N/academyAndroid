@@ -21,4 +21,6 @@
     <dimen name="list_item_padding">4dp</dimen>
     <dimen name="image_small_size">120dp</dimen>
     <dimen name="big_btn_size">300dp</dimen>
+    <dimen name="text_size_medium">12sp</dimen>
+    <dimen name="text_size_standart">14sp</dimen>
 </resources>

@@ -36,27 +36,27 @@ public class DataUtils {
         ));  Log.d(TAG, "context.getApplicationContext().getResources().getString(R.string.full_text_panda)");
         news.add(new NewsItem(
                 "Decoding Pandas’ Come-Hither Calls",
-                ContextCompat.getDrawable(context, R.drawable.panda),
-                context.getApplicationContext().getResources().getString(R.string.category_panda),
+                ContextCompat.getDrawable(context, R.drawable.robots),
+                context.getApplicationContext().getResources().getString(R.string.category_robots),
                 createDate(2018, 10, 5, 10, 26),
-                context.getApplicationContext().getResources().getString(R.string.preview_text_panda),
-                context.getApplicationContext().getResources().getString(R.string.full_text_panda)
+                context.getApplicationContext().getResources().getString(R.string.robots_obg_news),
+                context.getApplicationContext().getResources().getString(R.string.robots_text_news)
         ));
         news.add(new NewsItem(
                 "Decoding Pandas’ Come-Hither Calls",
-                ContextCompat.getDrawable(context, R.drawable.panda),
-                context.getApplicationContext().getResources().getString(R.string.category_panda),
+                ContextCompat.getDrawable(context, R.drawable.vr),
+                context.getApplicationContext().getResources().getString(R.string.category_augmented_reality),
                 createDate(2018, 10, 5, 10, 26),
-                context.getApplicationContext().getResources().getString(R.string.preview_text_panda),
-                context.getApplicationContext().getResources().getString(R.string.full_text_panda)
+                context.getApplicationContext().getResources().getString(R.string.ar_obg_news),
+                context.getApplicationContext().getResources().getString(R.string.ar_text_news)
         ));
         news.add(new NewsItem(
                 "Decoding Pandas’ Come-Hither Calls",
-                ContextCompat.getDrawable(context, R.drawable.panda),
-                context.getApplicationContext().getResources().getString(R.string.category_panda),
+                ContextCompat.getDrawable(context, R.drawable.printer),
+                context.getApplicationContext().getResources().getString(R.string.category_it_news),
                 createDate(2018, 10, 5, 10, 26),
-                context.getApplicationContext().getResources().getString(R.string.preview_text_panda),
-                context.getApplicationContext().getResources().getString(R.string.full_text_panda)
+                context.getApplicationContext().getResources().getString(R.string.printer_obg_news),
+                context.getApplicationContext().getResources().getString(R.string.printer_text_news)
         ));
         news.add(new NewsItem(
                 "Decoding Pandas’ Come-Hither Calls",
