@@ -20,7 +20,7 @@
     <string name="preview_text_panda">During mating season, the solitary mammals bleat important information to each other through their dense bamboo habitat.</string>
     <string name="full_text_panda">For solitary animals, giant pandas have an awful lot to say to one another. Their vocal repertoire comprises more than a dozen
      distinct grunts, barks and squeaks, most of which amount to some version of “leave me alone.”
-
+<!--
         But when mating season rolls around, both male and female giant pandas turn to their preferred
         come-hithercall: a husky, rapid vibrato that’s commonly known as the bleat.
         The bleat not only alerts other pandas to the presence of an available mate, it contains important information about the vocalist’s size and identity.
@@ -36,7 +36,7 @@
         To conduct the study, Dr. Owen and her colleagues — including Ben Charlton, another San Diego institute researcher who has studied panda bleats — obtained recordings of giant
         pandas from Chengdu, China, during breeding season. They then played those recordings through a speaker in a section of the San Diego Zoo Safari Park that contains bamboo similar
         in type and density to a typical panda habitat. By placing recording devices throughout the bamboo, the researchers were able to capture and analyze the bleats from various distances.EDITORS’ PICKS
-        How Connected Is Your Community to Everywhere Else in America?
+        How Connected Is Your Community to Everywhere Else in America?-->
  </string>
     <string name="title_activity_item_news_activity">item_news_activity</string>
     <string name="news_btn">NEWS</string>

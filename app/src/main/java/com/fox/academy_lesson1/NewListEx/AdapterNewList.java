@@ -36,21 +36,22 @@ public class AdapterNewList extends RecyclerView.Adapter<AdapterNewList.ViewHold
 
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        ImageView image;
         TextView author;
-        TextView textHeader;
+        ImageView image;
+        TextView category;
         TextView previewText;
         TextView textDescription;
         TextView textData;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            image = itemView.findViewById(R.id.news_img);
             author = itemView.findViewById(R.id.news_author_txt);
-            textHeader = itemView.findViewById(R.id.news_header_txt);
-            previewText = itemView.findViewById(R.id.news_preview_txt);
-            textDescription = itemView.findViewWithTag(R.id.news_descriptions_txt);
+            image = itemView.findViewById(R.id.news_img);
+            category = itemView.findViewById(R.id.news_category);
             textData = itemView.findViewById(R.id.news_data_txt);
+            previewText = itemView.findViewById(R.id.news_preview_txt);
+            textDescription = itemView.findViewById(R.id.news_descriptions_txt);
+
             itemView.setOnClickListener(this);
         }
 
@@ -74,9 +75,9 @@ public class AdapterNewList extends RecyclerView.Adapter<AdapterNewList.ViewHold
     public void onBindViewHolder(ViewHolder holder, int position) {
         NewsItem newsItem = news.get(position);
 
-        holder.textHeader.setText(newsItem.getTitle());
+        holder.author.setText(newsItem.getAuthor());
         holder.image.setBackground(newsItem.getImageUrl());
-        holder.author.setText(newsItem.getCategory()); //FIXME скорее всего некорретно откастует, опнять почему к чару
+        holder.category.setText(newsItem.getCategory());
         holder.previewText.setText(newsItem.getPreviewText());
         holder.textData.setText(newsItem.getPublishDate().toString());
         holder.textDescription.setText(newsItem.getFullText());
@@ -100,5 +101,4 @@ public class AdapterNewList extends RecyclerView.Adapter<AdapterNewList.ViewHold
     }
 
 
-    //TODO доделать holder и все под ресайкл с 100 страницы
 }

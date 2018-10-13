@@ -10,15 +10,15 @@ import java.util.Date;
 
 public class NewsItem {
 
-    private final String title;
+    private final String author;
     private final Drawable imageUrl;
     private final String category;
     private final Date publishDate;
     private final String previewText;
     private final String fullText;
 
-    public NewsItem(String title, Drawable imageUrl, String category, Date publishDate, String previewText, String fullText) {
-        this.title = title;
+    public NewsItem(String author, Drawable imageUrl, String category, Date publishDate, String previewText, String fullText) {
+        this.author = author;
         this.imageUrl = imageUrl;
         this.category = category;
         this.publishDate = publishDate;
@@ -26,8 +26,8 @@ public class NewsItem {
         this.fullText = fullText;
     }
 
-    public String getTitle() {
-        return title;
+    public String getAuthor() {
+        return author;
     }
 
     public Drawable getImageUrl() {
@@ -50,22 +50,7 @@ public class NewsItem {
         return fullText;
     }
 
-    public class Category {
-        private final int id;
-        private final String name;
 
-        public Category(int id, String name) {
-            this.id = id;
-            this.name = name;
-        }
 
-        public int getId() {
-            return id;
-        }
-
-        public String getName() {
-            return name;
-        }
-    }
 }
 

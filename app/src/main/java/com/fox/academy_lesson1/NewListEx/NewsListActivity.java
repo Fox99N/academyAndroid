@@ -1,31 +1,41 @@
 package com.fox.academy_lesson1.NewListEx;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.fox.academy_lesson1.R;
 
-public class NewsListActivity extends AppCompatActivity implements AdapterNewList.ItemClickListener{
+public class NewsListActivity extends AppCompatActivity implements AdapterNewList.ItemClickListener {
     private RecyclerView recyclerView;
-    private  AdapterNewList adapterNewList;
+    private AdapterNewList adapterNewList;
     private NewsItem newsItem;
-    private  Context context;
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_list);
 
-        context =getApplicationContext();
+        context = getApplicationContext();
 
-         adapterNewList = new AdapterNewList(DataUtils.generateNews(context), this);
-         recyclerView = findViewById(R.id.recycler_news_list);
-         recyclerView.setAdapter(adapterNewList);
-         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapterNewList = new AdapterNewList(DataUtils.generateNews(context), this);
+        recyclerView = findViewById(R.id.recycler_news_list);
+        recyclerView.setAdapter(adapterNewList);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        DividerItemDecoration horizontalDecoration = new DividerItemDecoration(recyclerView.getContext(),
+                DividerItemDecoration.VERTICAL);
+        Drawable horizontalDivider = ContextCompat.getDrawable(context, R.drawable.horizontal_divider);
+        horizontalDecoration.setDrawable(horizontalDivider);
+        recyclerView.addItemDecoration(horizontalDecoration);
+
+
     }
 
 
@@ -33,6 +43,7 @@ public class NewsListActivity extends AppCompatActivity implements AdapterNewLis
     public void onItemClick(View view, int position) {
 
     }
+
     @Override
     protected void onResume() {
         super.onResume();
