@@ -17,7 +17,7 @@
             android:layout_height="@dimen/image_small_size"
             android:layout_marginEnd="@dimen/margin_small_elements"
             android:adjustViewBounds="true"
-            android:scaleType="center" />
+            android:scaleType="centerCrop" />
     </android.support.v7.widget.CardView>
 
     <LinearLayout

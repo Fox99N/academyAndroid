@@ -19,7 +19,7 @@ import java.util.List;
  * Created by fox on 07.10.18.
  */
 
-public class DataUtils implements Serializable {
+public class DataUtils {
     public static final String TAG = "NPE";
 
     public static List<NewsItem> generateNews(Context context) {
@@ -29,15 +29,16 @@ public class DataUtils implements Serializable {
 
         news.add(new NewsItem(
                 "Decoding Pandas’ Come-Hither Calls",
-                ContextCompat.getDrawable(context, R.drawable.panda),
+                R.drawable.panda,
                 context.getApplicationContext().getResources().getString(R.string.category_panda),
                 createDate(2018, 10, 5, 10, 26),
                 context.getApplicationContext().getResources().getString(R.string.preview_text_panda),
                 context.getApplicationContext().getResources().getString(R.string.full_text_panda)
-        ));  Log.d(TAG, "context.getApplicationContext().getResources().getString(R.string.full_text_panda)");
+        ));
+        Log.d(TAG, "context.getApplicationContext().getResources().getString(R.string.full_text_panda)");
         news.add(new NewsItem(
                 "Decoding Pandas’ Come-Hither Calls",
-                ContextCompat.getDrawable(context, R.drawable.robots),
+                R.drawable.robots,
                 context.getApplicationContext().getResources().getString(R.string.category_robots),
                 createDate(2018, 10, 5, 10, 26),
                 context.getApplicationContext().getResources().getString(R.string.robots_obg_news),
@@ -45,7 +46,7 @@ public class DataUtils implements Serializable {
         ));
         news.add(new NewsItem(
                 "Decoding Pandas’ Come-Hither Calls",
-                ContextCompat.getDrawable(context, R.drawable.vr),
+                R.drawable.vr,
                 context.getApplicationContext().getResources().getString(R.string.category_augmented_reality),
                 createDate(2018, 10, 5, 10, 26),
                 context.getApplicationContext().getResources().getString(R.string.ar_obg_news),
@@ -53,7 +54,7 @@ public class DataUtils implements Serializable {
         ));
         news.add(new NewsItem(
                 "Decoding Pandas’ Come-Hither Calls",
-                ContextCompat.getDrawable(context, R.drawable.printer),
+                R.drawable.printer,
                 context.getApplicationContext().getResources().getString(R.string.category_it_news),
                 createDate(2018, 10, 5, 10, 26),
                 context.getApplicationContext().getResources().getString(R.string.printer_obg_news),
@@ -61,7 +62,7 @@ public class DataUtils implements Serializable {
         ));
         news.add(new NewsItem(
                 "Decoding Pandas’ Come-Hither Calls",
-                ContextCompat.getDrawable(context, R.drawable.panda),
+                R.drawable.panda,
                 context.getApplicationContext().getResources().getString(R.string.category_panda),
                 createDate(2018, 10, 5, 10, 26),
                 context.getApplicationContext().getResources().getString(R.string.preview_text_panda),

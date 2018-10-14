@@ -12,13 +12,13 @@ import java.util.Date;
 public class NewsItem implements Serializable{
 
     private final String author;
-    private final Drawable imageUrl;
+    private final int imageUrl;
     private final String category;
     private final Date publishDate;
     private final String previewText;
     private final String fullText;
 
-    public NewsItem(String author, Drawable imageUrl, String category, Date publishDate, String previewText, String fullText) {
+    public NewsItem(String author, int imageUrl, String category, Date publishDate, String previewText, String fullText) {
         this.author = author;
         this.imageUrl = imageUrl;
         this.category = category;
@@ -31,7 +31,7 @@ public class NewsItem implements Serializable{
         return author;
     }
 
-    public Drawable getImageUrl() {
+    public int getImageUrl() {
         return imageUrl;
     }
 

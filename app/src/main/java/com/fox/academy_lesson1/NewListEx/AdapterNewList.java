@@ -2,6 +2,7 @@ package com.fox.academy_lesson1.NewListEx;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import com.fox.academy_lesson1.R;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.util.List;
 import java.util.zip.DataFormatException;
@@ -82,7 +84,7 @@ public class AdapterNewList extends RecyclerView.Adapter<AdapterNewList.ViewHold
         final NewsItem newsItem = news.get(position);
 
         holder.author.setText(newsItem.getAuthor());
-        holder.image.setBackground(newsItem.getImageUrl());
+        holder.image.setImageResource(newsItem.getImageUrl());
         holder.category.setText(newsItem.getCategory());
         holder.previewText.setText(newsItem.getPreviewText());
         holder.textData.setText(newsItem.getPublishDate().toString());
@@ -100,9 +102,11 @@ public class AdapterNewList extends RecyclerView.Adapter<AdapterNewList.ViewHold
 
     }
 
-    public void openNewsActivity(NewsItem newsItem) {
+    public void openNewsActivity(NewsItem newsSeItem) {
         Intent intent = new Intent(context, NewActivity2.class);
-        intent.putExtra(ITEM_MESSAGE, newsItem);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(ITEM_MESSAGE, newsSeItem);
+        intent.putExtras(bundle);
         context.startActivity(intent);
 
     }
