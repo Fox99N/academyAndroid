@@ -78,7 +78,7 @@ public class AdapterNewList extends RecyclerView.Adapter<AdapterNewList.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(ViewHolder holder, int position) {
         final NewsItem newsItem = news.get(position);
 
         holder.author.setText(newsItem.getAuthor());
@@ -92,19 +92,17 @@ public class AdapterNewList extends RecyclerView.Adapter<AdapterNewList.ViewHold
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openNewsActivity(position);
+                openNewsActivity(
+                        newsItem);
 
             }
         });
 
     }
 
-
-    public void openNewsActivity(int position) {
+    public void openNewsActivity(NewsItem newsItem) {
         Intent intent = new Intent(context, NewActivity2.class);
-        NewsItem newsItem = news.get(position);
-        Toast.makeText(context, " show " + newsItem, Toast.LENGTH_LONG).show();
-        intent.putExtra(ITEM_MESSAGE, (Parcelable) newsItem);
+        intent.putExtra(ITEM_MESSAGE, newsItem);
         context.startActivity(intent);
 
     }

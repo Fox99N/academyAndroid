@@ -28,7 +28,7 @@ public class NewActivity2 extends AppCompatActivity {
         previewNews = (TextView) findViewById(R.id.news_preview_txt_full);
         fullText = (TextView) findViewById(R.id.news_descriptions_txt_full);
         Bundle bundle = getIntent().getExtras();
-        NewsItem news = bundle.getParcelable(ITEM_MESSAGE);
+        NewsItem news = (NewsItem) bundle.getSerializable(ITEM_MESSAGE);
 
         if (bundle != null) {
             imageNews.setBackground(news.getImageUrl());

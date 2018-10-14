@@ -8,6 +8,7 @@ import android.util.Log;
 
 import com.fox.academy_lesson1.R;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -18,7 +19,7 @@ import java.util.List;
  * Created by fox on 07.10.18.
  */
 
-public class DataUtils {
+public class DataUtils implements Serializable {
     public static final String TAG = "NPE";
 
     public static List<NewsItem> generateNews(Context context) {
