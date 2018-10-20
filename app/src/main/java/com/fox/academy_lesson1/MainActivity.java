@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.fox.academy_lesson1.NewListEx.NewsListActivity;
+import com.fox.academy_lesson1.threadTraining.ThreadActivity;
 
 public class MainActivity extends AppCompatActivity {
     private TextView hint;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "EXTRA_MESS";
     public static Button myCardBtn;
     public static Button newsBtn;
+    public static Button threadBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         previewBtn = (Button) findViewById(R.id.open_sec_activity_btn);
         myCardBtn = (Button) findViewById(R.id.open_my_profile_btn);
         newsBtn = (Button) findViewById(R.id.watch_news_btn);
-
+        threadBtn = (Button)findViewById(R.id.thread_btn);
         previewBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,12 +46,17 @@ public class MainActivity extends AppCompatActivity {
                 openMyCard();
             }
         });
-
         newsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openNewsActivity();
 
+            }
+        });
+        threadBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openThreadActivity();
             }
         });
     }
@@ -67,6 +74,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void openNewActivivity() {
         Intent intent = new Intent(this, SecondActivity.class);
+        String message = myMessage.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+    }
+
+    public void openThreadActivity() {
+        Intent intent = new Intent(this, ThreadActivity.class);
         String message = myMessage.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);

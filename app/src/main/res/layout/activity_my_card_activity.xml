@@ -14,11 +14,9 @@
         android:layout_height="match_parent">
 
         <LinearLayout
-
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
 
             <ImageView
                 android:id="@+id/photo"
@@ -28,7 +26,6 @@
                 android:adjustViewBounds="true"
                 android:background="@drawable/my_photo_i" />
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -37,7 +34,6 @@
                 android:layout_marginEnd="@dimen/margin_right_bottom"
                 android:layout_weight="1"
                 android:orientation="vertical">
-
 
                 <include
                     layout="@layout/layout_info_about_me"
@@ -49,7 +45,6 @@
                     android:layout_height="1dp"
                     android:background="@color/colorAccent" />
 
-
                 <TextView
                     android:id="@+id/text_description"
                     android:layout_width="wrap_content"
@@ -57,12 +52,10 @@
                     android:text="@string/big_info_about_me"
                     android:textSize="@dimen/text_small_size" />
 
-
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:background="@color/colorAccent" />
-
 
                 <EditText
                     android:id="@+id/input_message"
@@ -83,7 +76,6 @@
                     android:layout_marginBottom="@dimen/margin_bottom_middle"
                     android:textSize="@dimen/btn_small_text" />
 
-
                 <include
                     layout="@layout/layout_image_contact"
                     android:layout_width="wrap_content"
@@ -91,10 +83,7 @@
                     android:layout_marginTop="@dimen/margin_small_elements"
                     android:layout_gravity="center|bottom" />
 
-
             </LinearLayout>
-
         </LinearLayout>
-
     </ScrollView>
 </LinearLayout>

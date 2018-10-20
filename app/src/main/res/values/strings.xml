@@ -129,6 +129,7 @@
     <string name="news_btn">NEWS</string>
     <string name="my_card_btn">MY CARD</string>
     <string name="preview_btn">PREVIEW</string>
+    <string name="thread_text_btn">Thread</string>
 
 
 </resources>

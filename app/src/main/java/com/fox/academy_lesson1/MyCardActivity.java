@@ -49,7 +49,7 @@ public class MyCardActivity extends AppCompatActivity implements View.OnClickLis
         textskill3 = (TextView) findViewById(R.id.text_skill3);
         bigInfo = (TextView) findViewById(R.id.text_description);
         typedText = (EditText) findViewById(R.id.input_message);
-        sendEmailBrowserBtn = (Button) findViewById(R.id.send_mail_btn);
+        sendEmailBrowserBtn = (Button) findViewById(R.id.btn_send_email);
         openGitHub = (ImageButton) findViewById(R.id.img_open_github);
         openTelegramm = (ImageButton) findViewById(R.id.img_open_telega);
         openInstagram = (ImageButton) findViewById(R.id.img_open_instagram);

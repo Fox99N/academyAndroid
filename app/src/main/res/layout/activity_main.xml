@@ -61,5 +61,15 @@
         android:textSize="@dimen/btn_text"
         />
 
+    <Button
+        android:id="@+id/thread_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:layout_marginTop="@dimen/elements_margin"
+        android:text="@string/thread_text_btn"
+        android:layout_weight="0"
+        android:textSize="@dimen/btn_text"
+        />
 
 </LinearLayout>
