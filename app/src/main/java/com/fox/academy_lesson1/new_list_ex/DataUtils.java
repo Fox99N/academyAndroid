@@ -1,28 +1,21 @@
-package com.fox.academy_lesson1.NewListEx;
+package com.fox.academy_lesson1.new_list_ex;
 
 import android.content.Context;
-import android.content.res.Resources;
-import android.icu.util.ULocale;
-import android.support.v4.content.ContextCompat;
 import android.util.Log;
 
 import com.fox.academy_lesson1.R;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
 
-/**
- * Created by fox on 07.10.18.
- */
 
 public class DataUtils {
     public static final String TAG = "NPE";
 
-    public static List<NewsItem> generateNews(Context context) {
+     static List<NewsItem> generateNews(Context context) {
 
 
         List<NewsItem> news = new ArrayList<>();

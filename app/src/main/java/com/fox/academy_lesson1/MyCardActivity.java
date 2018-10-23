@@ -2,7 +2,6 @@ package com.fox.academy_lesson1;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,10 +10,6 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
-import static com.fox.academy_lesson1.MainActivity.EXTRA_MESSAGE;
 
 public class MyCardActivity extends AppCompatActivity implements View.OnClickListener {
     private ImageView photo;
@@ -39,7 +34,7 @@ public class MyCardActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_card_activity);
+        setContentView(R.layout.my_card_activity);
         photo = (ImageView) findViewById(R.id.photo);
         skill1 = (ImageView) findViewById(R.id.img_skill1);
         skill2 = (ImageView) findViewById(R.id.img_skill2);
@@ -50,11 +45,9 @@ public class MyCardActivity extends AppCompatActivity implements View.OnClickLis
         bigInfo = (TextView) findViewById(R.id.text_description);
         typedText = (EditText) findViewById(R.id.input_message);
         sendEmailBrowserBtn = (Button) findViewById(R.id.btn_send_email);
-        openGitHub = (ImageButton) findViewById(R.id.img_open_github);
-        openTelegramm = (ImageButton) findViewById(R.id.img_open_telega);
-        openInstagram = (ImageButton) findViewById(R.id.img_open_instagram);
-
-
+        openGitHub = (ImageButton) findViewById(R.id.open_github_img);
+        openTelegramm = (ImageButton) findViewById(R.id.open_telega_img);
+        openInstagram = (ImageButton) findViewById(R.id.open_instagram_img);
         subject = getString(R.string.text_email_header);
         sendEmailBrowserBtn.setOnClickListener(this);
         openTelegramm.setOnClickListener(this);
@@ -73,24 +66,21 @@ public class MyCardActivity extends AppCompatActivity implements View.OnClickLis
                sendMessage(parseLink);
                 break;
 
-            case R.id.img_open_github:
+            case R.id.open_github_img:
                 parseLink = "https://github.com/";
                 openMyContact(parseLink);
                 break;
 
-            case R.id.img_open_telega:
+            case R.id.open_telega_img:
                 parseLink = "https://telegram.com";
                 openMyContact(parseLink);
                 break;
 
-
-            case R.id.img_open_instagram:
+            case R.id.open_instagram_img:
                 parseLink = "https://www.instagram.com/?hl=ru";
                 openMyContact(parseLink);
                 break;
-
         }
-
     }
 
     public void openMyContact(String parse) {
@@ -130,7 +120,6 @@ public class MyCardActivity extends AppCompatActivity implements View.OnClickLis
     protected void onRestart() {
         super.onRestart();
     }
-
 
 }
 

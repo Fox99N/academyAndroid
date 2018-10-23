@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="180dp"
     android:orientation="horizontal"
-    android:padding="@dimen/list_item_padding">
+    android:padding="@dimen/padding_list_item">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
@@ -30,20 +30,20 @@
             android:id="@+id/news_author_txt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/text_size_medium" />
+            android:textSize="@dimen/text_medium_size" />
 
         <TextView
             android:id="@+id/news_category"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/text_size_medium" />
+            android:textSize="@dimen/text_medium_size" />
 
         <TextView
             android:id="@+id/news_preview_txt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="2"
-            android:textSize="@dimen/text_size_standart"
+            android:textSize="@dimen/text_standart_size"
             android:textStyle="bold" />
 
         <TextView
@@ -51,16 +51,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="4"
-            android:textSize="@dimen/text_size_standart"
+            android:textSize="@dimen/text_standart_size"
             android:layout_marginBottom="2dp"/>
 
         <TextView
             android:id="@+id/news_data_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/text_small_size" />
+            android:textSize="@dimen/text_size_small" />
 
     </LinearLayout>
-
-
 </LinearLayout>

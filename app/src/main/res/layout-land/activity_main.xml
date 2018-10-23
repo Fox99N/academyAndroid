@@ -13,7 +13,7 @@
     tools:context="com.fox.academy_lesson1.MainActivity">
 
     <TextView
-        android:id="@+id/text_hint"
+        android:id="@+id/description_hint_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/enter_your_text_here"
@@ -32,7 +32,7 @@
     <Button
         android:id="@+id/open_sec_activity_btn"
         android:layout_gravity="center"
-        android:layout_width="@dimen/big_btn_size"
+        android:layout_width="@dimen/btn_big_size"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
         android:text="@string/preview_btn"
@@ -42,10 +42,10 @@
     <Button
         android:id="@+id/open_my_profile_btn"
         android:layout_gravity="center"
-        android:layout_width="@dimen/big_btn_size"
+        android:layout_width="@dimen/btn_big_size"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
-        android:layout_marginTop="@dimen/elements_margin"
+        android:layout_marginTop="@dimen/margin_elements_standart"
         android:text="@string/my_card_btn"
         android:layout_weight="0"
         android:textSize="@dimen/btn_text"
@@ -54,10 +54,10 @@
     <Button
         android:id="@+id/watch_news_btn"
         android:layout_gravity="center"
-        android:layout_width="@dimen/big_btn_size"
+        android:layout_width="@dimen/btn_big_size"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
-        android:layout_marginTop="@dimen/elements_margin"
+        android:layout_marginTop="@dimen/margin_elements_standart"
         android:text="@string/news_btn"
         android:layout_weight="0"
         android:textSize="@dimen/btn_text"

@@ -28,9 +28,9 @@
         <activity
             android:name=".MyCardActivity"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity android:name=".NewListEx.NewsListActivity" />
-        <activity android:name=".NewListEx.NewActivity2" />
-        <activity android:name=".threadTraining.ThreadActivity"></activity>
+        <activity android:name=".new_list_ex.NewsListActivity" />
+        <activity android:name=".new_list_ex.NewsActivity2" />
+        <activity android:name=".thread_training.ThreadActivity"/>
     </application>
 
 </manifest>

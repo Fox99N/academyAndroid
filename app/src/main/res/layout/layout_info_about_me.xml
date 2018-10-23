@@ -21,7 +21,7 @@
         android:layout_toEndOf="@+id/img_skill1"
         android:text="@string/company_info"
         android:layout_marginBottom="@dimen/margin_small_elements"
-        android:textSize="@dimen/text_small_size_ad_info"/>
+        android:textSize="@dimen/text_standart_size"/>
 
     <ImageView
         android:id="@+id/img_skill2"
@@ -40,7 +40,7 @@
         android:layout_below="@+id/text_skill1"
         android:layout_toEndOf="@+id/img_skill1"
         android:text="@string/my_goal_text"
-        android:textSize="@dimen/text_small_size_ad_info"
+        android:textSize="@dimen/text_standart_size"
         android:layout_marginBottom="@dimen/margin_small_elements"/>
 
     <ImageView
@@ -60,7 +60,7 @@
         android:layout_below="@+id/text_skill2"
         android:layout_toEndOf="@+id/img_skill3"
         android:text="@string/love_sport_text"
-        android:textSize="@dimen/text_small_size_ad_info"
+        android:textSize="@dimen/text_standart_size"
         android:layout_marginBottom="@dimen/margin_small_elements"/>
 
 

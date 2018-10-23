@@ -1,9 +1,7 @@
-package com.fox.academy_lesson1.threadTraining;
+package com.fox.academy_lesson1.thread_training;
 
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.fox.academy_lesson1.R;
 

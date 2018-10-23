@@ -1,13 +1,8 @@
-package com.fox.academy_lesson1.NewListEx;
-
-import android.graphics.drawable.Drawable;
+package com.fox.academy_lesson1.new_list_ex;
 
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * Created by fox on 07.10.18.
- */
 
 public class NewsItem implements Serializable{
 

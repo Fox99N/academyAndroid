@@ -1,6 +1,5 @@
-package com.fox.academy_lesson1.NewListEx;
+package com.fox.academy_lesson1.new_list_ex;
 
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -8,18 +7,13 @@ import android.widget.TextView;
 
 import com.fox.academy_lesson1.R;
 
-import java.io.Serializable;
-import java.util.List;
-
-public class NewActivity2 extends AppCompatActivity {
+public class NewsActivity2 extends AppCompatActivity {
     private ImageView imageNews;
     private TextView authorNews;
     private TextView previewNews;
     private TextView fullText;
 
-
-
-    private final String ITEM_MESSAGE = "ITEM_MESSAGE";
+    private final String EXTRA_NEWS_ITEM = "ITEM_NEWS";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +24,7 @@ public class NewActivity2 extends AppCompatActivity {
         previewNews = (TextView) findViewById(R.id.news_preview_txt_full);
         fullText = (TextView) findViewById(R.id.news_descriptions_txt_full);
         Bundle bundle = getIntent().getExtras();
-        NewsItem newsItem =(NewsItem) bundle.getSerializable(ITEM_MESSAGE);
+        NewsItem newsItem =(NewsItem) bundle.getSerializable(EXTRA_NEWS_ITEM);
 
         if (bundle != null) {
             imageNews.setBackgroundResource(newsItem.getImageUrl());

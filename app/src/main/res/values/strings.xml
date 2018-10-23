@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Academy_Lesson1</string>
     <string name="enter_your_text_here">Enter your text here</string>
-    <string name="my_text">My text</string>
+    <string name="edit_prev_text">Entered text</string>
     <string name="email_btn">EMAIL</string>
     <string name="text_email_header">My opinion about app</string>
     <string name="my_mail_address">xxxx@gmail.com</string>

@@ -1,4 +1,4 @@
-package com.fox.academy_lesson1.NewListEx;
+package com.fox.academy_lesson1.new_list_ex;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -12,9 +12,9 @@ import android.view.View;
 
 import com.fox.academy_lesson1.R;
 
-public class NewsListActivity extends AppCompatActivity implements AdapterNewList.ItemClickListener {
+public class NewsListActivity extends AppCompatActivity implements NewsListAdapter.ItemClickListener {
     private RecyclerView recyclerView;
-    private AdapterNewList adapterNewList;
+    private NewsListAdapter adapterNewList;
     private NewsItem newsItem;
     private Context context;
 
@@ -22,10 +22,8 @@ public class NewsListActivity extends AppCompatActivity implements AdapterNewLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_list);
-
         context = getApplicationContext();
-
-        adapterNewList = new AdapterNewList(DataUtils.generateNews(context), this);
+        adapterNewList = new NewsListAdapter(DataUtils.generateNews(context), this);
         recyclerView = findViewById(R.id.recycler_news_list);
         recyclerView.setAdapter(adapterNewList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -34,14 +32,9 @@ public class NewsListActivity extends AppCompatActivity implements AdapterNewLis
         Drawable horizontalDivider = ContextCompat.getDrawable(context, R.drawable.horizontal_divider);
         horizontalDecoration.setDrawable(horizontalDivider);
         recyclerView.addItemDecoration(horizontalDecoration);
-
-
     }
-
-
     @Override
     public void onItemClick(View view, int position) {
-
     }
 
     @Override
@@ -58,6 +51,7 @@ public class NewsListActivity extends AppCompatActivity implements AdapterNewLis
     @Override
     protected void onStop() {
         super.onStop();
+
     }
 
     @Override
