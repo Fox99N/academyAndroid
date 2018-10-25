@@ -61,6 +61,4 @@
             android:textSize="@dimen/text_small_size" />
 
     </LinearLayout>
-
-
 </LinearLayout>

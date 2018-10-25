@@ -29,7 +29,7 @@
             android:name=".MyCardActivity"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity android:name=".NewListEx.NewsListActivity" />
-        <activity android:name=".NewListEx.NewActivity2"></activity>
+        <activity android:name=".NewListEx.NewsItemActivity"></activity>
     </application>
 
 </manifest>

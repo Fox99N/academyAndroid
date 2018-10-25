@@ -18,7 +18,6 @@
         android:layout_marginEnd="@dimen/margin_right_small_icon"
         android:background="@drawable/instagram" />
 
-
     <ImageButton
         android:id="@+id/img_open_github"
         android:layout_width="@dimen/img_little_size"

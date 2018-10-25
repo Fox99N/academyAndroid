@@ -1,16 +1,10 @@
 package com.fox.academy_lesson1.NewListEx;
 
-import android.graphics.drawable.Drawable;
-
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * Created by fox on 07.10.18.
- */
 
 public class NewsItem implements Serializable{
-
     private final String author;
     private final int imageUrl;
     private final String category;
@@ -50,8 +44,6 @@ public class NewsItem implements Serializable{
     public String getFullText() {
         return fullText;
     }
-
-
 
 }
 

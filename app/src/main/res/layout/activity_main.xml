@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -16,50 +15,45 @@
         android:id="@+id/text_hint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/enter_your_text_here"
-        android:textSize="@dimen/text_standart_size"
         android:layout_weight="0"
-       />
+        android:text="@string/enter_your_text_here"
+        android:textSize="@dimen/text_standart_size" />
 
-    f<EditText
+    <EditText
 
         android:id="@+id/my_msg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/text_big_size"
-        android:layout_weight="0" />
+        android:layout_weight="0"
+        android:textSize="@dimen/text_big_size" />
 
     <Button
         android:id="@+id/open_sec_activity_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="0"
         android:background="@color/colorAccent"
         android:text="@string/preview_btn"
-        android:layout_weight="0"
-        android:textSize="@dimen/btn_text"
-        />
+        android:textSize="@dimen/btn_text" />
 
     <Button
         android:id="@+id/open_my_profile_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
         android:layout_marginTop="@dimen/elements_margin"
-        android:text="@string/my_card_btn"
         android:layout_weight="0"
-        android:textSize="@dimen/btn_text"
-        />
+        android:background="@color/colorAccent"
+        android:text="@string/my_card_btn"
+        android:textSize="@dimen/btn_text" />
 
     <Button
         android:id="@+id/watch_news_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
         android:layout_marginTop="@dimen/elements_margin"
-        android:text="@string/news_btn"
         android:layout_weight="0"
-        android:textSize="@dimen/btn_text"
-        />
-
+        android:background="@color/colorAccent"
+        android:text="@string/news_btn"
+        android:textSize="@dimen/btn_text" />
 
 </LinearLayout>

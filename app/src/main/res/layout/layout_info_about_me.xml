@@ -4,7 +4,6 @@
     android:layout_height="wrap_content"
     android:layout_weight="1">
 
-
     <ImageView
         android:id="@+id/img_skill1"
         android:layout_width="@dimen/img_info_label"
@@ -62,6 +61,5 @@
         android:text="@string/love_sport_text"
         android:textSize="@dimen/text_small_size_ad_info"
         android:layout_marginBottom="@dimen/margin_small_elements"/>
-
 
 </RelativeLayout>

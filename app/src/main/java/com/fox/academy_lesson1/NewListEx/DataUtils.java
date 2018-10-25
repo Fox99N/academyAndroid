@@ -20,10 +20,8 @@ import java.util.List;
  */
 
 public class DataUtils {
-    public static final String TAG = "NPE";
-
+    public static final String TAG = "NewsPositionElement";
     public static List<NewsItem> generateNews(Context context) {
-
 
         List<NewsItem> news = new ArrayList<>();
 
@@ -70,7 +68,6 @@ public class DataUtils {
         ));
         return news;
     }
-
 
     private static Date createDate(int year, int month, int date, int hrs, int min) {
         return new GregorianCalendar(year, month - 1, date, hrs, min).getTime();
