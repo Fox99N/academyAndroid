@@ -64,14 +64,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
     public void openNewActivivity() {
         Intent intent = new Intent(this, SecondActivity.class);
         String message = myMessage.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
-
 
     @Override
     protected void onResume() {

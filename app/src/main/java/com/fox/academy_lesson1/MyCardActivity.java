@@ -54,7 +54,6 @@ public class MyCardActivity extends AppCompatActivity implements View.OnClickLis
         openTelegramm = (ImageButton) findViewById(R.id.img_open_telega);
         openInstagram = (ImageButton) findViewById(R.id.img_open_instagram);
 
-
         subject = getString(R.string.text_email_header);
         sendEmailBrowserBtn.setOnClickListener(this);
         openTelegramm.setOnClickListener(this);
@@ -90,7 +89,6 @@ public class MyCardActivity extends AppCompatActivity implements View.OnClickLis
                 break;
 
         }
-
     }
 
     public void openMyContact(String parse) {
@@ -130,7 +128,6 @@ public class MyCardActivity extends AppCompatActivity implements View.OnClickLis
     protected void onRestart() {
         super.onRestart();
     }
-
 
 }
 
