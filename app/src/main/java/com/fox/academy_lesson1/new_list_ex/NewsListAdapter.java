@@ -75,7 +75,7 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
     }
 
     private void openNewsActivity(NewsItem newsSeItem) {
-        Intent intent = new Intent(context, NewsActivity2.class);
+        Intent intent = new Intent(context, NewsItemsActivity.class);
         Bundle bundle = new Bundle();
         bundle.putSerializable(EXTRA_NEWS_ITEM, newsSeItem);
         intent.putExtras(bundle);

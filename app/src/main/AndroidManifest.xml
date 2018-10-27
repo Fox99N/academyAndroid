@@ -29,7 +29,7 @@
             android:name=".MyCardActivity"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity android:name=".new_list_ex.NewsListActivity" />
-        <activity android:name=".new_list_ex.NewsActivity2" />
+        <activity android:name=".new_list_ex.NewsItemsActivity" />
         <activity android:name=".thread_training.ThreadActivity"/>
     </application>
 

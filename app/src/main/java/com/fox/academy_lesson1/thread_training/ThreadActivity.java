@@ -2,19 +2,19 @@ package com.fox.academy_lesson1.thread_training;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
 import com.fox.academy_lesson1.R;
-
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 public class ThreadActivity extends AppCompatActivity {
+    private static final Object object = new Object();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thread);
+        Executor executor = Executors.newFixedThreadPool(2);
 
     }
 
@@ -23,41 +23,49 @@ public class ThreadActivity extends AppCompatActivity {
         super.onStart();
         Executor executor = Executors.newFixedThreadPool(2);
         executor.execute(new LeftLeg());
-        try {
-            TimeUnit.SECONDS.sleep(1);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         executor.execute(new RightLeg());
     }
 
-    class LeftLeg implements Runnable {
-        private boolean isRunning = true;
+   class LeftLeg implements Runnable {
 
-        @Override
-        public synchronized void run() {
-                //  Log.i("info", "Current thread is: " + Thread.currentThread());
-                for (int i = 0; i < 10; i++) {
-                    System.out.println("Left step");
-                } isRunning = false;
-        }
-    }
-
-    class RightLeg implements Runnable {
-        private boolean isRunning = true;
-
-        @Override
-        public synchronized void run() {
-            try {
-                wait(2);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+       @Override
+        public void run() {
+            synchronized (object) {
+                try {
+                    for (int i = 0; i < 10; i++) {
+                        System.out.println("Left step");
+                        object.notify();
+                        object.wait();
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                object.notifyAll();
             }
-            //Log.i("info", "Current thread is: " + Thread.currentThread());
-                for (int i = 0; i <10 ; i++) {
-                    System.out.println("Right step");
-                } isRunning =false;
         }
     }
+
+        class RightLeg implements Runnable {
+
+            @Override
+            public void run() {
+                synchronized (object) {
+                    try {
+                        for (int i = 0; i < 10; i++) {
+                            System.out.println("Right step");
+                            object.notify();
+                            object.wait();
+                        }
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    object.notifyAll();
+                }
+            }
+        }
+
+
 }
+
+
 

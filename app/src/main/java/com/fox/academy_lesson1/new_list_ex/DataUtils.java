@@ -16,9 +16,7 @@ public class DataUtils {
     public static final String TAG = "NPE";
 
      static List<NewsItem> generateNews(Context context) {
-
-
-        List<NewsItem> news = new ArrayList<>();
+         List<NewsItem> news = new ArrayList<>();
 
         news.add(new NewsItem(
                 "Decoding Pandas’ Come-Hither Calls",

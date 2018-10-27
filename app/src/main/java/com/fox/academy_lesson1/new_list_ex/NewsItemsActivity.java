@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.fox.academy_lesson1.R;
 
-public class NewsActivity2 extends AppCompatActivity {
+public class NewsItemsActivity extends AppCompatActivity {
     private ImageView imageNews;
     private TextView authorNews;
     private TextView previewNews;
