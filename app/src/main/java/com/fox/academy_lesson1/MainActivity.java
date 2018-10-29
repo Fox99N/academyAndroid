@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import com.fox.academy_lesson1.new_list_ex.NewsListActivity;
 import com.fox.academy_lesson1.thread_training.ThreadActivity;
 
@@ -20,12 +19,10 @@ public class MainActivity extends AppCompatActivity {
     private EditText msgEditText;
     private Button previewBtn;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         description = (TextView) findViewById(R.id.description_hint_text);
         msgEditText = (EditText) findViewById(R.id.my_msg);
         previewBtn = (Button) findViewById(R.id.open_sec_activity_btn);

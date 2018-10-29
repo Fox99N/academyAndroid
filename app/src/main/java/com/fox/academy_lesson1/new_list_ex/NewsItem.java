@@ -46,7 +46,5 @@ public class NewsItem implements Serializable{
         return fullText;
     }
 
-
-
 }
 

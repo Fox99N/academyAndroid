@@ -10,9 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.fox.academy_lesson1.R;
-
 import java.util.List;
 
 
@@ -22,7 +20,6 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
     private final List<NewsItem> news;
     private final LayoutInflater layoutInflater;
     private ItemClickListener clickListener;
-
 
      class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView author;
@@ -101,5 +98,4 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
         this.context = context;
         this.layoutInflater = LayoutInflater.from(context);
     }
-
 }

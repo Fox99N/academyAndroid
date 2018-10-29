@@ -19,10 +19,10 @@ import java.util.concurrent.TimeUnit;
 
 
 public class NewsListActivity extends AppCompatActivity implements NewsListAdapter.ItemClickListener {
+    private Context context;
     private RecyclerView recyclerView;
     private NewsListAdapter adapterNewList;
     private List<NewsItem> news;
-    private Context context;
     private Handler h;
     private ProgressBar progressBar;
     private MyAsyncTask myAsyncTask;
@@ -51,7 +51,6 @@ public class NewsListActivity extends AppCompatActivity implements NewsListAdapt
     @Override
     protected void onStart() {
         super.onStart();
-
     }
 
     private class MyAsyncTask extends AsyncTask<List<NewsItem>, Void, List<NewsItem>> {
@@ -69,7 +68,6 @@ public class NewsListActivity extends AppCompatActivity implements NewsListAdapt
                 e.printStackTrace();
             }
                 news = DataUtils.generateNews(context);
-
             return news;
         }
 

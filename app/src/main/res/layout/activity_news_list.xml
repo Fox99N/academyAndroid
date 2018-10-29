@@ -20,6 +20,6 @@
          android:layout_width="60dp"
          android:layout_height="60dp"
          android:visibility="gone"
-         android:background="@color/colorPrimary"/>
+         android:layout_gravity="center"/>
 
 </LinearLayout>

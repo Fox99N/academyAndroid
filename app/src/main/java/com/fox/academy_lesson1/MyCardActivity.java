@@ -30,24 +30,23 @@ public class MyCardActivity extends AppCompatActivity implements View.OnClickLis
     public String subject;
     public String parseLink;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_card_activity);
-        photo = (ImageView) findViewById(R.id.photo);
-        skill1 = (ImageView) findViewById(R.id.img_skill1);
-        skill2 = (ImageView) findViewById(R.id.img_skill2);
-        skill3 = (ImageView) findViewById(R.id.img_skill3);
-        textskill1 = (TextView) findViewById(R.id.text_skill1);
-        textskill2 = (TextView) findViewById(R.id.text_skill2);
-        textskill3 = (TextView) findViewById(R.id.text_skill3);
-        bigInfo = (TextView) findViewById(R.id.text_description);
-        typedText = (EditText) findViewById(R.id.input_message);
-        sendEmailBrowserBtn = (Button) findViewById(R.id.btn_send_email);
-        openGitHub = (ImageButton) findViewById(R.id.open_github_img);
-        openTelegramm = (ImageButton) findViewById(R.id.open_telega_img);
-        openInstagram = (ImageButton) findViewById(R.id.open_instagram_img);
+        photo = findViewById(R.id.photo);
+        skill1 = findViewById(R.id.img_skill1);
+        skill2 = findViewById(R.id.img_skill2);
+        skill3 = findViewById(R.id.img_skill3);
+        textskill1 = findViewById(R.id.text_skill1);
+        textskill2 = findViewById(R.id.text_skill2);
+        textskill3 = findViewById(R.id.text_skill3);
+        bigInfo = findViewById(R.id.text_description);
+        typedText = findViewById(R.id.input_message);
+        sendEmailBrowserBtn = findViewById(R.id.btn_send_email);
+        openGitHub = findViewById(R.id.open_github_img);
+        openTelegramm = findViewById(R.id.open_telega_img);
+        openInstagram = findViewById(R.id.open_instagram_img);
         subject = getString(R.string.text_email_header);
         sendEmailBrowserBtn.setOnClickListener(this);
         openTelegramm.setOnClickListener(this);
@@ -63,7 +62,7 @@ public class MyCardActivity extends AppCompatActivity implements View.OnClickLis
 
             case R.id.send_mail_btn:
                 parseLink = "https://mail.google.com/mail/u/0/?tab=wm#inbox" + email;
-               sendMessage(parseLink);
+                sendMessage(parseLink);
                 break;
 
             case R.id.open_github_img:
@@ -88,12 +87,12 @@ public class MyCardActivity extends AppCompatActivity implements View.OnClickLis
         startActivity(intent);
     }
 
-     private void sendMessage(String parse) {
-          Intent sendIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(parse));//еще доделываю чтоб адресат ставился и текст сохранялся
-          sendIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
-          sendIntent.putExtra(Intent.EXTRA_TEXT, msg);
-          startActivity(Intent.createChooser(sendIntent, "Send letter"));
-      }
+    private void sendMessage(String parse) {
+        Intent sendIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(parse));//еще доделываю чтоб адресат ставился и текст сохранялся
+        sendIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, msg);
+        startActivity(Intent.createChooser(sendIntent, "Send letter"));
+    }
 
     @Override
     protected void onResume() {

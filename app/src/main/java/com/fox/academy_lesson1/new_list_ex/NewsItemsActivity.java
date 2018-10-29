@@ -9,13 +9,12 @@ import android.widget.TextView;
 import com.fox.academy_lesson1.R;
 
 public class NewsItemsActivity extends AppCompatActivity {
+    private final String EXTRA_NEWS_ITEM = "ITEM_NEWS";
     private ImageView imageNews;
     private TextView authorNews;
     private TextView previewNews;
     private TextView fullText;
     private ProgressBar progressNews;
-
-    private final String EXTRA_NEWS_ITEM = "ITEM_NEWS";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
