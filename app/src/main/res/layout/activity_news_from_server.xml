@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.fox.academy_lesson1.networking_news.news_ui.NewsFromServerActivity">
+    
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/news_from_server_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:layout_margin="4dp">
+    </android.support.v7.widget.RecyclerView>
+  
+    <ProgressBar
+        android:id="@+id/news_frm_server_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/error_load_data_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_medium_size"
+        android:visibility="gone"
+        android:text="@string/error_its_no_data"/>
+
+    <TextView
+        android:id="@+id/error_server_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_medium_size"
+        android:visibility="gone"
+        android:text="@string/server_error_sth_bad_happened"/>
+
+</LinearLayout>
