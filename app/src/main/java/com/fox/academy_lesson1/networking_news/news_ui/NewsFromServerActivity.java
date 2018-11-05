@@ -5,11 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.fox.academy_lesson1.R;
-import com.fox.academy_lesson1.networking_news.DefaultResponse;
 import com.fox.academy_lesson1.networking_news.RestApi;
 import com.fox.academy_lesson1.networking_news.dto.MultimediaDTO;
 import com.fox.academy_lesson1.networking_news.dto.NewsDTO;
@@ -81,10 +81,12 @@ public class NewsFromServerActivity extends AppCompatActivity {
         searchRequest = RestApi.getInstance()
                 .newsDounload()
                 .search();
+        Log.e("searchRequest IS ", String.valueOf(searchRequest));
         searchRequest.enqueue(new Callback<NewsDTO>() {
 
             @Override
             public void onResponse(Call<NewsDTO> call, Response<NewsDTO> response) {
+                Log.e("call" + call, String.valueOf(response));
                 checkResponseAndShowState(response);
             }
 
@@ -100,7 +102,8 @@ public class NewsFromServerActivity extends AppCompatActivity {
             showState(State.ServerError);
         }
         final NewsDTO body = response.body();
-        final List<ResultDTO> resultDTO = body.getResultDTO();
+        Log.e("", body.toString());
+        final List<ResultDTO> resultDTO = body.getResults();
         if (body == null || resultDTO == null || resultDTO.isEmpty()) {
             showState(State.HasNoData);
         }

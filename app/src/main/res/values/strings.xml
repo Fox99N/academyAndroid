@@ -132,6 +132,7 @@
     <string name="thread_text_btn">Thread</string>
     <string name="error_its_no_data">Error: its no data</string>
     <string name="server_error_sth_bad_happened">Server error. Sth bad happened</string>
+    <string name="real_nyt_news_btn">REAL NYT NEWS</string>
 
 
 </resources>

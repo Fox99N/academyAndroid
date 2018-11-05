@@ -6,8 +6,7 @@ public class NewsDTO {
      String status;
      String copyright;
      String section;
-    @SerializedName("results")
-     List<ResultDTO> resultDTO;
+     List<ResultDTO> results;
 
     public String getStatus() {
         return status;
@@ -21,8 +20,18 @@ public class NewsDTO {
         return section;
     }
 
-    public List<ResultDTO> getResultDTO() {
-        return resultDTO;
+    public List<ResultDTO> getResults() {
+        return results;
+    }
+
+    @Override
+    public String toString() {
+        return "NewsDTO{" +
+                "status='" + status + '\'' +
+                ", copyright='" + copyright + '\'' +
+                ", section='" + section + '\'' +
+                ", results=" + results +
+                '}';
     }
 }
 

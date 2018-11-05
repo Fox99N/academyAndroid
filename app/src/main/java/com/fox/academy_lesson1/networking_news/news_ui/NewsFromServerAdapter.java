@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
 import com.fox.academy_lesson1.R;
 import com.fox.academy_lesson1.networking_news.dto.MultimediaDTO;
@@ -19,6 +18,7 @@ import java.util.List;
 
 
 public class NewsFromServerAdapter extends RecyclerView.Adapter<NewsFromServerAdapter.ViewHolder> {
+    private final Context context;
     private List<ResultDTO> resultDTO = new ArrayList<>();
     private final LayoutInflater layoutInflater;
     private NewsListAdapter.ItemClickListener clickListener;
@@ -75,8 +75,9 @@ public class NewsFromServerAdapter extends RecyclerView.Adapter<NewsFromServerAd
         return resultDTO.size();
     }
 
-    public NewsFromServerAdapter(List<ResultDTO> resultDTO, Context layoutInflater) {
+    public NewsFromServerAdapter(List<ResultDTO> resultDTO, Context context) {
          this.resultDTO = resultDTO;
-         this.layoutInflater = layoutInflater;
+         this.context = context;
+         this.layoutInflater = LayoutInflater.from(context);
     }
 }

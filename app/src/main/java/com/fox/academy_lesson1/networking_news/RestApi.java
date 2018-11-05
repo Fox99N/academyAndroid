@@ -1,16 +1,12 @@
 package com.fox.academy_lesson1.networking_news;
 
 import android.support.annotation.NonNull;
-
 import com.fox.academy_lesson1.networking_news.endpoint.NewsFindEndpoint;
-
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.util.concurrent.TimeUnit;
-
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
-
 import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -44,7 +40,6 @@ public class RestApi {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
-
     private OkHttpClient buildOkHttpClient() {
         final HttpLoggingInterceptor networkLogInterceptor = new HttpLoggingInterceptor();
         networkLogInterceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
@@ -53,11 +48,11 @@ public class RestApi {
                 .addInterceptor(new Interceptor() {
                     @Override
                     public Response intercept(Chain chain) throws IOException {
-                        Request original=  chain.request();
+                        Request original = chain.request();
 
                         Request.Builder builder = original.newBuilder()
-                                .header("Authorization", API_KEY);
-                        Request  request = builder.build();
+                                .header("api-key", API_KEY);
+                        Request request = builder.build();
                         return chain.proceed(request);
                     }
                 })
@@ -67,7 +62,8 @@ public class RestApi {
                 .build();
 
     }
-    public NewsFindEndpoint newsDounload(){
+
+    public NewsFindEndpoint newsDounload() {
         return newsFindEndpoint;
     }
 
