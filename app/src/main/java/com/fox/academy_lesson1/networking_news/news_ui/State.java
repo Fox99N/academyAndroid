@@ -8,5 +8,6 @@ public enum State {
     HasNoData,
     Loading,
     NetworkingError,
-    ServerError
+    ServerError,
+    HasData
 }

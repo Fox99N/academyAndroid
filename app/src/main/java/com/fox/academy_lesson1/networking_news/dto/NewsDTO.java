@@ -1,40 +1,28 @@
 package com.fox.academy_lesson1.networking_news.dto;
-
 import com.google.gson.annotations.SerializedName;
-
-/**
- * Created by fox on 04.11.18.
- */
+import java.util.List;
 
 public class NewsDTO {
-     @SerializedName("section")
-    String section;
-     @SerializedName("title")
-    String title;
-     @SerializedName("abstract")
-    String abstractDescription;
-     @SerializedName("published_date")
-    String publishDate;
-     @SerializedName("url")
-    String url;
+     String status;
+     String copyright;
+     String section;
+    @SerializedName("results")
+     List<ResultDTO> resultDTO;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public String getCopyright() {
+        return copyright;
+    }
 
     public String getSection() {
         return section;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public String getAbstractDescription() {
-        return abstractDescription;
-    }
-
-    public String getPublishDate() {
-        return publishDate;
-    }
-
-    public String getUrl() {
-        return url;
+    public List<ResultDTO> getResultDTO() {
+        return resultDTO;
     }
 }
+

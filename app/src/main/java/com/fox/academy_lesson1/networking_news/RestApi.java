@@ -67,6 +67,8 @@ public class RestApi {
                 .build();
 
     }
-
+    public NewsFindEndpoint newsDounload(){
+        return newsFindEndpoint;
+    }
 
 }
