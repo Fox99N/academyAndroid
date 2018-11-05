@@ -39,6 +39,7 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
             textData = itemView.findViewById(R.id.news_data_txt);
             previewText = itemView.findViewById(R.id.news_preview_txt);
             textDescription = itemView.findViewById(R.id.news_descriptions_txt);
+
             itemView.setOnClickListener(this);
 
         }

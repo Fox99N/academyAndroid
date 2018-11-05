@@ -25,8 +25,8 @@ public class NewsItemsActivity extends AppCompatActivity {
         previewNews = findViewById(R.id.news_preview_txt_full);
         fullText = findViewById(R.id.news_descriptions_txt_full);
         progressNews = findViewById(R.id.news_list_progressbar);
-                Bundle bundle = getIntent().getExtras();
-        NewsItem newsItem =(NewsItem) bundle.getSerializable(EXTRA_NEWS_ITEM);
+        Bundle bundle = getIntent().getExtras();
+        NewsItem newsItem = (NewsItem) bundle.getSerializable(EXTRA_NEWS_ITEM);
 
         if (bundle != null) {
             imageNews.setBackgroundResource(newsItem.getImageUrl());

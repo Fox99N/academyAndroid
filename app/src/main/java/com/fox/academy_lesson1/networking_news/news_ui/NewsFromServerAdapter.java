@@ -1,6 +1,8 @@
 package com.fox.academy_lesson1.networking_news.news_ui;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -18,6 +20,7 @@ import java.util.List;
 
 
 public class NewsFromServerAdapter extends RecyclerView.Adapter<NewsFromServerAdapter.ViewHolder> {
+    private static final String EXTRA_NEWS_ITEM_SERVER = "ITEM_FROM_SERVER";
     private final Context context;
     private List<ResultDTO> resultDTO = new ArrayList<>();
     private final LayoutInflater layoutInflater;
@@ -56,7 +59,9 @@ public class NewsFromServerAdapter extends RecyclerView.Adapter<NewsFromServerAd
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
          View view = layoutInflater.inflate(R.layout.news_item_list_from_server, parent, false);
-        return new ViewHolder(view);
+         ViewHolder holder = new ViewHolder(view);
+         holder.itemView.setOnClickListener(v -> openNewsActivity(holder.getAdapterPosition()));
+        return holder;
     }
 
     @Override
@@ -80,4 +85,16 @@ public class NewsFromServerAdapter extends RecyclerView.Adapter<NewsFromServerAd
          this.context = context;
          this.layoutInflater = LayoutInflater.from(context);
     }
+
+    public interface ItemClicListner{
+        void onItemClick(View view, int position);
+    }
+    private void openNewsActivity(int newsFromServerItem) {
+        Intent intent = new Intent(context, NewsItemFromServerActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(EXTRA_NEWS_ITEM_SERVER, newsFromServerItem);
+        intent.putExtras(bundle);
+        context.startActivity(intent);
+    }
+
 }

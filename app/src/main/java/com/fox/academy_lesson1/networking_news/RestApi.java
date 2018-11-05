@@ -36,11 +36,11 @@ public class RestApi {
     private Retrofit buildRetrofitClient(@NonNull OkHttpClient client) {
         return new Retrofit.Builder()
                 .baseUrl(URL)
-                .client(client)
+                .client(client)//клиент OkHttp
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
-    private OkHttpClient buildOkHttpClient() {
+    private OkHttpClient buildOkHttpClient() {//через клиента ретрофит получает данные
         final HttpLoggingInterceptor networkLogInterceptor = new HttpLoggingInterceptor();
         networkLogInterceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
 
