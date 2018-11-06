@@ -26,7 +26,7 @@ public class NewsItemFromServerActivity extends AppCompatActivity {
         newsItemTitle = findViewById(R.id.item_news_title);
         newsItemDescription  = findViewById(R.id.item_news_descriptions_server_txt_full);
         Bundle bundle = getIntent().getExtras();
-        ResultDTO resultDTO = (ResultDTO) bundle.getSerializable(EXTRA_NEWS_ITEM_SERVER);//FIXME  cast exeption
+        ResultDTO resultDTO = (ResultDTO) bundle.getSerializable(EXTRA_NEWS_ITEM_SERVER);//FIXME  cast exception
  /*       FATAL EXCEPTION: main
         Process: com.fox.nytimes, PID: 17412
         java.lang.RuntimeException: Unable to start activity
