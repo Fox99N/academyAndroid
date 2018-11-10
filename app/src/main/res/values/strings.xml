@@ -133,6 +133,18 @@
     <string name="error_its_no_data">Error: its no data</string>
     <string name="server_error_sth_bad_happened">Server error. Sth bad happened</string>
     <string name="real_nyt_news_btn">REAL NYT NEWS</string>
+    <string name="dafault_topic_technology_text">Technology</string>
+    <string name="choose_topic_text_title">Choose a topic</string>
+    <string name="alert_cancel_btn">Cancel</string>
+    <string-array name="topic_array">TOPIC Array
+        <item one="Technology"></item>
+        <item one="Opinion"></item>
+        <item one="National"></item>
+        <item one="Politics"></item>
+        <item one="Business"></item>
+        <item one="Science"></item>
+        <item one="Health"></item>
+    </string-array>
 
 
 </resources>

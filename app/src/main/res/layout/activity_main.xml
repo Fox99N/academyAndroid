@@ -18,10 +18,9 @@
         android:layout_height="wrap_content"
         android:text="@string/enter_your_text_here"
         android:textSize="@dimen/text_standart_size"
-        android:layout_weight="0"
-       />
+        android:layout_weight="0" />
 
-    f<EditText
+    <EditText
 
         android:id="@+id/my_msg"
         android:layout_width="match_parent"
@@ -77,7 +76,5 @@
         android:text="@string/real_nyt_news_btn"
         android:layout_weight="0"
         android:textSize="@dimen/btn_text" />
-
-
 
 </LinearLayout>

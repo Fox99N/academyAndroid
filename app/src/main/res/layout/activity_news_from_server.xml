@@ -4,8 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.fox.academy_lesson1.networking_news.news_ui.NewsFromServerActivity">
-    
+    tools:context="com.fox.academy_lesson1.networking_news.news_ui.NewsFromServerActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/choose_type_nesw_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_medium_size"
+        android:text="@string/dafault_topic_technology_text"
+        android:layout_marginTop="@dimen/margin_bottom_middle"/>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/news_from_server_recycler"
         android:layout_width="match_parent"
@@ -19,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"
-        android:layout_gravity="center" />
+        android:layout_gravity="center|center_vertical" />
 
     <TextView
         android:id="@+id/error_load_data_text"

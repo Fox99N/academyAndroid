@@ -1,6 +1,10 @@
 package com.fox.academy_lesson1.networking_news.news_ui;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,19 +13,24 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
 import com.fox.academy_lesson1.R;
 import com.fox.academy_lesson1.networking_news.RestApi;
 import com.fox.academy_lesson1.networking_news.dto.MultimediaDTO;
 import com.fox.academy_lesson1.networking_news.dto.NewsDTO;
 import com.fox.academy_lesson1.networking_news.dto.ResultDTO;
+
 import android.os.AsyncTask;
+
 import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 
 public class NewsFromServerActivity extends AppCompatActivity {
+    private Context context;
     private RecyclerView newsFromServerRecycler;
     private NewsFromServerAdapter newsFromServerAdapter;
     private ProgressBar newsFSpb;
@@ -32,6 +41,7 @@ public class NewsFromServerActivity extends AppCompatActivity {
     private ResultDTO resultDTO;
     @NonNull
     private Call<NewsDTO> searchRequest;
+    private TextView newsTopic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +52,37 @@ public class NewsFromServerActivity extends AppCompatActivity {
         serverError = findViewById(R.id.error_server_text);
         newsFromServerRecycler = findViewById(R.id.news_from_server_recycler);
         newsFromServerRecycler.setLayoutManager(new LinearLayoutManager(this));
-        myAsyncTask = new MyAsyncTask();
+        newsTopic = findViewById(R.id.choose_type_nesw_text);
+        newsTopic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showAlertDialog();
+            }
+        });
+                myAsyncTask = new MyAsyncTask();
         myAsyncTask.execute();
+    }
+
+    private void showAlertDialog() {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
+        alertDialog.setTitle(R.string.choose_topic_text_title);
+        String[] topicks =  {"Technology", "Opinion", "National", "Politics", "Business", "Science", "Health"};
+        int checkedItem = 0;
+        alertDialog.setSingleChoiceItems(topicks, checkedItem, new DialogInterface.OnClickListener(){
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        });
+        alertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                loadNews(); //TODO не забыть в апи поставить выбранную тему и  переделать откурыти в веб вью
+            }
+        });
+         alertDialog.setNegativeButton(R.string.alert_cancel_btn, null);
+         AlertDialog dialog = alertDialog.create();
+         dialog.show();
     }
 
     private class MyAsyncTask extends AsyncTask<List<NewsDTO>, Void, List<NewsDTO>> {
