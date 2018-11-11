@@ -27,6 +27,7 @@
                 android:scaleType="centerCrop"
                 app:layout_collapseMode="parallax" />
 
+
         </android.support.design.widget.CollapsingToolbarLayout>
 
     </android.support.design.widget.AppBarLayout>

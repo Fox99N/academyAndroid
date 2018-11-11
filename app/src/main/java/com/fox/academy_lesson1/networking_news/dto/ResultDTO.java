@@ -42,8 +42,7 @@ public class ResultDTO implements Serializable{
     }
 
     public String getUrl() {
-        return url;
-    }
+        return url;}
 
     public List<MultimediaDTO> getMultimedia() {
         return multimedia;

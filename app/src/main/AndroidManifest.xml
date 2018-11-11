@@ -33,6 +33,7 @@
         <activity android:name=".thread_training.ThreadActivity" />
         <activity android:name=".networking_news.news_ui.NewsFromServerActivity" />
         <activity android:name=".networking_news.news_ui.NewsItemFromServerActivity"></activity>
+
     </application>
 
 </manifest>
