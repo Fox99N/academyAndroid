@@ -63,7 +63,7 @@ public class RestApi {
 
     }
 
-    public NewsFindEndpoint newsDounload() {
+    public NewsFindEndpoint newsDownload() {
         return newsFindEndpoint;
     }
 

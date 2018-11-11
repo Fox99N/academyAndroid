@@ -3,13 +3,13 @@ package com.fox.academy_lesson1.networking_news.news_ui;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -22,6 +22,7 @@ import com.fox.academy_lesson1.networking_news.dto.ResultDTO;
 
 import android.os.AsyncTask;
 
+import java.util.Arrays;
 import java.util.List;
 
 import retrofit2.Call;
@@ -61,28 +62,50 @@ public class NewsFromServerActivity extends AppCompatActivity {
         });
                 myAsyncTask = new MyAsyncTask();
         myAsyncTask.execute();
+        loadNews();
     }
 
     private void showAlertDialog() {
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(context);
+        LayoutInflater layoutInflater = LayoutInflater.from(getApplicationContext());
+       // View promts = layoutInflater.inflate(R.layout.allert_dialog_editmeasurements, null);//
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
         alertDialog.setTitle(R.string.choose_topic_text_title);
-        String[] topicks =  {"Technology", "Opinion", "National", "Politics", "Business", "Science", "Health"};
+        String[] topicks =  {"technology", "opinion", "politics", "business", "science", "health"};
+        final String topic = " ";
         int checkedItem = 0;
-        alertDialog.setSingleChoiceItems(topicks, checkedItem, new DialogInterface.OnClickListener(){
-
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-            }
-        });
-        alertDialog.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                loadNews(); //TODO не забыть в апи поставить выбранную тему и  переделать откурыти в веб вью
-            }
+        alertDialog.setSingleChoiceItems(topicks, checkedItem, (DialogInterface dialog, int which) -> {
+                });
+        alertDialog.setPositiveButton("OK", (dialog, which) -> {
+            String selectedItem = topicks[((AlertDialog) dialog).getListView().getCheckedItemPosition()];
+            Log.d("string topic", selectedItem);
+            loadNewsWithChosenTopic(selectedItem);
+            newsTopic.setText(selectedItem);
+            //TODO не забыть в апи поставить выбранную тему и  переделать откурыти в веб вью
         });
          alertDialog.setNegativeButton(R.string.alert_cancel_btn, null);
          AlertDialog dialog = alertDialog.create();
          dialog.show();
+    }
+
+    private void loadNewsWithChosenTopic(String topic) {
+        showState(State.Loading);
+        searchRequest = RestApi.getInstance()
+                .newsDownload()
+                .searchFromChosenTopic(topic);
+        Log.e("searchRequest IS ", String.valueOf(searchRequest));
+        searchRequest.enqueue(new Callback<NewsDTO>() {
+
+            @Override
+            public void onResponse(Call<NewsDTO> call, Response<NewsDTO> response) {
+                Log.e("call" + call, String.valueOf(response));
+                checkResponseAndShowState(response);
+            }
+
+            @Override
+            public void onFailure(Call<NewsDTO> call, Throwable t) {
+
+            }
+        });
     }
 
     private class MyAsyncTask extends AsyncTask<List<NewsDTO>, Void, List<NewsDTO>> {
@@ -101,7 +124,6 @@ public class NewsFromServerActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        loadNews();
     }
 
     @Override
@@ -118,8 +140,8 @@ public class NewsFromServerActivity extends AppCompatActivity {
     private void loadNews() {
         showState(State.Loading);
         searchRequest = RestApi.getInstance()
-                .newsDounload()
-                .search();
+                .newsDownload()
+                .searchDefault();
         Log.e("searchRequest IS ", String.valueOf(searchRequest));
         searchRequest.enqueue(new Callback<NewsDTO>() {
 
@@ -149,7 +171,7 @@ public class NewsFromServerActivity extends AppCompatActivity {
         newsFromServerAdapter = new NewsFromServerAdapter(resultDTO, getApplicationContext());
         newsFromServerRecycler.setAdapter(newsFromServerAdapter);
         showState(State.HasData);
-
+        newsFromServerAdapter.notifyDataSetChanged();
     }
 
     private void showState(State state) {
