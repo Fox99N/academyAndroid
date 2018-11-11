@@ -4,19 +4,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.webkit.WebView;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import com.bumptech.glide.Glide;
 import com.fox.academy_lesson1.R;
 import com.fox.academy_lesson1.networking_news.dto.ResultDTO;
 
 public class NewsItemFromServerActivity extends AppCompatActivity {
     private static final String EXTRA_NEWS_ITEM_SERVER = "ITEM_FROM_SERVER";
-    private ImageView newsItemImage;
-    private TextView newsItemAuthor;
-    private TextView newsItemTitle;
-    private TextView newsItemDescription;
     private WebView webView;
 
     @Override
