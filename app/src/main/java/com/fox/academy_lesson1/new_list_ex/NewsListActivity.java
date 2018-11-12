@@ -1,4 +1,4 @@
-package com.fox.academy_lesson1.NewListEx;
+package com.fox.academy_lesson1.new_list_ex;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;

@@ -1,4 +1,4 @@
-package com.fox.academy_lesson1.NewListEx;
+package com.fox.academy_lesson1.new_list_ex;
 
 import java.io.Serializable;
 import java.util.Date;

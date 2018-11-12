@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.fox.academy_lesson1.NewListEx.NewsListActivity"
+    tools:context="com.fox.academy_lesson1.new_list_ex.NewsListActivity"
     android:columnCount="2">
 
     <android.support.v7.widget.RecyclerView

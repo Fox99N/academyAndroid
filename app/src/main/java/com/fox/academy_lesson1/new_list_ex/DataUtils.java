@@ -1,4 +1,4 @@
-package com.fox.academy_lesson1.NewListEx;
+package com.fox.academy_lesson1.new_list_ex;
 
 import android.content.Context;
 import android.util.Log;
@@ -11,7 +11,6 @@ import java.util.List;
 
 public class DataUtils {
     public static final String TAG = "NewsPositionElement";
-
     public static List<NewsItem> generateNews(Context context) {
 
         List<NewsItem> news = new ArrayList<>();

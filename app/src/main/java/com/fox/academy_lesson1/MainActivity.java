@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.fox.academy_lesson1.NewListEx.NewsListActivity;
+import com.fox.academy_lesson1.new_list_ex.NewsListActivity;
 
 public class MainActivity extends AppCompatActivity {
     private TextView hint;
