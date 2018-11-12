@@ -22,7 +22,8 @@ public class NewsListActivity extends AppCompatActivity implements NewsListAdapt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_list);
         context = getApplicationContext();
-        adapterNewList = new NewsListAdapter(DataUtils.generateNews(context), this);
+ /*       adapterNewList = new NewsListAdapter(DataUtils.generateNews(context), this);*/
+        adapterNewList = new NewsListAdapter(this, newsItem -> NewsItemActivity.start(this, newsItem));
         recyclerView = findViewById(R.id.recycler_news_list);
         recyclerView.setAdapter(adapterNewList);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -31,6 +32,7 @@ public class NewsListActivity extends AppCompatActivity implements NewsListAdapt
         Drawable horizontalDivider = ContextCompat.getDrawable(context, R.drawable.horizontal_divider);
         horizontalDecoration.setDrawable(horizontalDivider);
         recyclerView.addItemDecoration(horizontalDecoration);
+        adapterNewList.replaceItems(DataUtils.generateNews(context));
     }
 
     @Override

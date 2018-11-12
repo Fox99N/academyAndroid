@@ -10,11 +10,11 @@ import android.widget.TextView;
 import com.fox.academy_lesson1.R;
 
 public class NewsItemActivity extends AppCompatActivity {
+    private static final String EXTRA_NEWS_ITEM = "ITEM_NEWS";
     private ImageView imageNews;
     private TextView authorNews;
     private TextView previewNews;
     private TextView fullText;
-    private final String EXTRA_NEWS_ITEM = "ITEM_NEWS";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,15 +24,18 @@ public class NewsItemActivity extends AppCompatActivity {
         authorNews = (TextView) findViewById(R.id.news_author_txt_full);
         previewNews = (TextView) findViewById(R.id.news_preview_txt_full);
         fullText = (TextView) findViewById(R.id.news_descriptions_txt_full);
-        Bundle bundle = getIntent().getExtras();
-        NewsItem newsItem =(NewsItem) bundle.getSerializable(EXTRA_NEWS_ITEM);
+        Intent intent = getIntent();
+        NewsItem newsItem =(NewsItem) intent.getSerializableExtra(EXTRA_NEWS_ITEM);
 
-        if (bundle != null) {
+        if (intent != null) {
             imageNews.setBackgroundResource(newsItem.getImageUrl());
             authorNews.setText(newsItem.getAuthor());
             previewNews.setText(newsItem.getPreviewText());
             fullText.setText(newsItem.getFullText());
         }
+    }
+    public static void start(@NonNull Context context, @NonNull NewsItem newsItem) {
+        context.startActivity(new Intent(context, NewsItemActivity.class).putExtra(EXTRA_NEWS_ITEM, newsItem));
     }
 
     @Override

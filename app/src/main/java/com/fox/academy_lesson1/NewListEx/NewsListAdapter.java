@@ -4,40 +4,44 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.fox.academy_lesson1.R;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by fox on 25.10.18.
- */
 
 public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHolder>  {
     private static final String EXTRA_NEWS_ITEM = "ITEM_NEWS";
-    private final Context context;
-    private final List<NewsItem> news;
+    private final List<NewsItem> news = new ArrayList<>();
     private final LayoutInflater layoutInflater;
-    private ItemClickListener clickListener;
+    private final OnItemClickListener clickListener;
 
-    NewsListAdapter(List<NewsItem> news, Context context) {
-        this.news = news;
-        this.context = context;
+
+    public NewsListAdapter(Context context, @NonNull OnItemClickListener clickListener) {
         this.layoutInflater = LayoutInflater.from(context);
+        this.clickListener = clickListener;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = layoutInflater.inflate(R.layout.new_items_list, parent, false);
-
-        return new ViewHolder(view);
+        final ViewHolder holder = new ViewHolder(view);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e("holder.getAdapterPosition", String.valueOf(holder.getAdapterPosition()));
+                /*openNewsActivity(holder.getAdapterPosition());*/
+            }
+        });
+        return holder;
     }
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
@@ -55,12 +59,6 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                   openNewsActivity(news.get(getAdapterPosition()));
-                }
-            });
             author = itemView.findViewById(R.id.news_author_txt);
             image = itemView.findViewById(R.id.news_img);
             category = itemView.findViewById(R.id.news_category);
@@ -83,6 +81,16 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
 
         }
     }
+    public void replaceItems(@NonNull List<NewsItem> newItems) {
+        news.clear();
+        news.addAll(newItems);
+        notifyDataSetChanged();
+    }
+
+
+    public interface OnItemClickListener {
+        void onItemClick(@NonNull NewsItem newsItem);
+    }
 
     @Override
     public int getItemCount() {
@@ -99,11 +107,4 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
         void onItemClick(View view, int position);
     }
 
-    private void openNewsActivity(NewsItem newsSeItem) {
-        Intent intent = new Intent(context, NewsItemActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putSerializable(EXTRA_NEWS_ITEM, newsSeItem);
-        intent.putExtras(bundle);
-        context.startActivity(intent);
-    }
 }

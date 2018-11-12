@@ -1,7 +1,6 @@
 package com.fox.academy_lesson1;
 
 import android.content.Intent;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,11 +23,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        hint = (TextView) findViewById(R.id.text_hint);
-        myMessage = (EditText) findViewById(R.id.my_msg);
-        previewBtn = (Button) findViewById(R.id.open_sec_activity_btn);
-        myCardBtn = (Button) findViewById(R.id.open_my_profile_btn);
-        newsBtn = (Button) findViewById(R.id.watch_news_btn);
+        hint = findViewById(R.id.text_hint);
+        myMessage = findViewById(R.id.my_msg);
+        previewBtn = findViewById(R.id.open_sec_activity_btn);
+        myCardBtn = findViewById(R.id.open_my_profile_btn);
+        newsBtn = findViewById(R.id.watch_news_btn);
 
         previewBtn.setOnClickListener(new View.OnClickListener() {
             @Override
