@@ -5,5 +5,4 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.fox.academy_lesson1.thread_training.ThreadActivity">
-
 </android.support.constraint.ConstraintLayout>

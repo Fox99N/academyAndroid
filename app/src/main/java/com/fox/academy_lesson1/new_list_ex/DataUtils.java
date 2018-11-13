@@ -9,9 +9,8 @@ import java.util.GregorianCalendar;
 import java.util.List;
 
 
-
 public class DataUtils {
-    public static final String TAG = "NPE";
+    public static final String TAG = "NewsPartElement";
 
      static List<NewsItem> generateNews(Context context) {
          List<NewsItem> news = new ArrayList<>();

@@ -11,10 +11,10 @@ import com.fox.academy_lesson1.new_list_ex.NewsListActivity;
 import com.fox.academy_lesson1.thread_training.ThreadActivity;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String EXTRA_MESSAGE = "EXTRA_MESS";
-    public Button myCardBtn;
-    public Button newsBtn;
-    public Button threadBtn;
+    private static final String EXTRA_MESSAGE = "EXTRA_MESS";
+    private Button myCardBtn;
+    private Button newsBtn;
+    private Button threadBtn;
     private TextView description;
     private EditText msgEditText;
     private Button previewBtn;
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         previewBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openNewActivivity();
+                openNewActivity();
             }
         });
         myCardBtn.setOnClickListener(new View.OnClickListener() {
@@ -65,14 +65,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openNewActivivity() {
+    private void openNewActivity() {
         Intent intent = new Intent(this, SecondActivity.class);
         String message = msgEditText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
 
-    public void openThreadActivity() {
+    private void openThreadActivity() {
         Intent intent = new Intent(this, ThreadActivity.class);
         String message = msgEditText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);

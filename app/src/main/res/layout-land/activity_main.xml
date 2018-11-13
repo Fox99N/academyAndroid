@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -17,46 +16,41 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/enter_your_text_here"
-        android:textSize="16sp"
-        android:layout_weight="0" />
+        android:textSize="16sp" />
 
     <EditText
 
         android:id="@+id/my_msg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="22sp"
-        android:layout_weight="0" />
+        android:textSize="22sp" />
 
     <Button
         android:id="@+id/open_sec_activity_btn"
-        android:layout_gravity="center"
         android:layout_width="@dimen/btn_big_size"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:background="@color/colorAccent"
         android:text="@string/preview_btn"
-        android:layout_weight="0"
         android:textSize="@dimen/btn_text" />
 
     <Button
         android:id="@+id/open_my_profile_btn"
-        android:layout_gravity="center"
         android:layout_width="@dimen/btn_big_size"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
+        android:layout_gravity="center"
         android:layout_marginTop="@dimen/margin_elements_standart"
+        android:background="@color/colorAccent"
         android:text="@string/my_card_btn"
-        android:layout_weight="0"
         android:textSize="@dimen/btn_text" />
 
     <Button
         android:id="@+id/watch_news_btn"
-        android:layout_gravity="center"
         android:layout_width="@dimen/btn_big_size"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
+        android:layout_gravity="center"
         android:layout_marginTop="@dimen/margin_elements_standart"
+        android:background="@color/colorAccent"
         android:text="@string/news_btn"
-        android:layout_weight="0"
         android:textSize="@dimen/btn_text" />
 </LinearLayout>

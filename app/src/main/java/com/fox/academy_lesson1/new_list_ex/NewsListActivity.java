@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
-public class NewsListActivity extends AppCompatActivity implements NewsListAdapter.ItemClickListener {
+public class NewsListActivity extends AppCompatActivity implements NewsListAdapter.OnItemClickListener  {
     private Context context;
     private RecyclerView recyclerView;
     private NewsListAdapter adapterNewList;
@@ -30,22 +30,16 @@ public class NewsListActivity extends AppCompatActivity implements NewsListAdapt
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        context = getApplicationContext();
         setContentView(R.layout.activity_news_list);
+        context = getApplicationContext();
         recyclerView = findViewById(R.id.recycler_news_list);
-        progressBar = (ProgressBar)findViewById(R.id.news_list_progressbar);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         DividerItemDecoration horizontalDecoration = new DividerItemDecoration(recyclerView.getContext(),
                 DividerItemDecoration.VERTICAL);
         Drawable horizontalDivider = ContextCompat.getDrawable(context, R.drawable.horizontal_divider);
         horizontalDecoration.setDrawable(horizontalDivider);
         recyclerView.addItemDecoration(horizontalDecoration);
-        myAsyncTask = new MyAsyncTask();
-        myAsyncTask.execute();
-    }
-
-    @Override
-    public void onItemClick(View view, int position) {
+        adapterNewList.replaceItems(DataUtils.generateNews(context));
     }
 
     @Override
@@ -107,5 +101,11 @@ public class NewsListActivity extends AppCompatActivity implements NewsListAdapt
     protected void onRestart() {
         super.onRestart();
     }
+
+    @Override
+    public void onItemClick(NewsItem newsItem) {
+        NewsItemsActivity.start(this, newsItem);
+    }
+
 }
 
