@@ -9,11 +9,18 @@
     <dimen name="margin_right_bottom">15dp</dimen>
     <dimen name="btn_small_text">15sp</dimen>
     <dimen name="btn_small_size">30dp</dimen>
-    <dimen name="text_small_size">14sp</dimen>
     <dimen name="img_info_label">20dp</dimen>
     <dimen name="text_small_size_ad_info">13sp</dimen>
     <dimen name="margin_right_small_icon">16dp</dimen>
     <dimen name="margin_bottom_middle">16dp</dimen>
     <dimen name="margin_small_elements">8dp</dimen>
     <dimen name="margin_small_elements_wtf">10dp</dimen>
+    <dimen name="image_big_size">250dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="list_item_padding">4dp</dimen>
+    <dimen name="image_small_size">120dp</dimen>
+    <dimen name="big_btn_size">300dp</dimen>
+    <dimen name="text_size_medium">12sp</dimen>
+    <dimen name="text_size_standart">14sp</dimen>
+    <dimen name="text_small_size">10sp</dimen>
 </resources>

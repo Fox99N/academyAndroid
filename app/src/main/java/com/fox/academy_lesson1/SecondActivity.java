@@ -20,16 +20,12 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-
         myTextmsg = (TextView) findViewById(R.id.display_my_msg);
         sendMsg = (Button) findViewById(R.id.send_mail_btn);
-
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             myTextmsg.setText(bundle.getString(EXTRA_MESSAGE));
         }
-
-
         sendMsg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,11 +41,8 @@ public class SecondActivity extends AppCompatActivity {
         Intent sendIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto: " + email));
         sendIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
         sendIntent.putExtra(Intent.EXTRA_TEXT, msg);
-
-
         startActivity(Intent.createChooser(sendIntent, "Send letter"));
     }
-
 
     @Override
     protected void onResume() {
