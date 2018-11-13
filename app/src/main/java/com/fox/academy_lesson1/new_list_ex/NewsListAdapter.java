@@ -46,7 +46,7 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
 
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView author;
         private ImageView image;
         private TextView category;
@@ -72,12 +72,8 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
             textData.setText(newsItem.getPublishDate().toString());
             textDescription.setText(newsItem.getFullText());
         }
-
-        @Override
-        public void onClick(View v) {
-
-        }
     }
+
     public void replaceItems(@NonNull List<NewsItem> newItems) {
         news.clear();
         news.addAll(newItems);
@@ -100,8 +96,6 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
 
     public interface ItemClickListener {
         void onItemClick(NewsItem newsItem);
-
-        void onItemClick(View view, int position);
     }
 
 }

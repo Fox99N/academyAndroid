@@ -21,8 +21,6 @@ public class NewsListActivity extends AppCompatActivity implements NewsListAdapt
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_list);
-        context = getApplicationContext();
- /*       adapterNewList = new NewsListAdapter(DataUtils.generateNews(context), this);*/
         adapterNewList = new NewsListAdapter(this, newsItem -> NewsItemActivity.start(this, newsItem));
         recyclerView = findViewById(R.id.recycler_news_list);
         recyclerView.setAdapter(adapterNewList);
@@ -66,9 +64,5 @@ public class NewsListActivity extends AppCompatActivity implements NewsListAdapt
 
     }
 
-    @Override
-    public void onItemClick(View view, int position) {
-
-    }
 }
 
