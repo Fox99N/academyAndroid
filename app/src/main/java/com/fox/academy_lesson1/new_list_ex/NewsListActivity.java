@@ -63,6 +63,5 @@ public class NewsListActivity extends AppCompatActivity implements NewsListAdapt
     public void onItemClick(NewsItem newsItem) {
 
     }
-
 }
 

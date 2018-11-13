@@ -46,7 +46,7 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
 
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder{
         private TextView author;
         private ImageView image;
         private TextView category;
@@ -72,7 +72,6 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
             textData.setText(newsItem.getPublishDate().toString());
             textDescription.setText(newsItem.getFullText());
         }
-    }
 
     public void replaceItems(@NonNull List<NewsItem> newItems) {
         news.clear();
