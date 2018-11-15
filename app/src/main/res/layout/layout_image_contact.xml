@@ -2,29 +2,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:layout_marginBottom="20dp">
+    android:orientation="horizontal">
 
     <ImageButton
-        android:id="@+id/img_cont_telega"
+        android:id="@+id/open_telega_img"
         android:layout_width="@dimen/img_little_size"
         android:layout_height="@dimen/img_little_size"
-        android:layout_marginRight="@dimen/margin_right_small_icon"
+        android:layout_marginEnd="@dimen/margin_right_small"
         android:background="@drawable/telegram" />
 
     <ImageButton
-        android:id="@+id/img_cont_instagram"
+        android:id="@+id/open_instagram_img"
         android:layout_width="@dimen/img_little_size"
         android:layout_height="@dimen/img_little_size"
-        android:layout_marginRight="@dimen/margin_right_small_icon"
+        android:layout_marginEnd="@dimen/margin_right_small"
         android:background="@drawable/instagram" />
 
 
     <ImageButton
-        android:id="@+id/img_cont_github"
+        android:id="@+id/open_github_img"
         android:layout_width="@dimen/img_little_size"
         android:layout_height="@dimen/img_little_size"
-        android:layout_marginRight="@dimen/margin_right_small_icon"
+        android:layout_marginEnd="@dimen/margin_right_small"
         android:background="@drawable/github" />
 
 </LinearLayout>

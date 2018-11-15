@@ -15,7 +15,7 @@
         android:layout_gravity="center"
         android:layout_weight="1"
         android:gravity="center"
-        android:hint="@string/my_text"
+        android:hint="@string/edit_prev_text"
         android:textAlignment="center"
         android:textSize="24sp" />
 

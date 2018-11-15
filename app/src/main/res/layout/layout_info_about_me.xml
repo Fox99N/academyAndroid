@@ -4,34 +4,31 @@
     android:layout_height="wrap_content"
     android:layout_weight="1">
 
-
     <ImageView
         android:id="@+id/img_skill1"
         android:layout_width="@dimen/img_info_label"
         android:layout_height="@dimen/img_info_label"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:background="@drawable/puzzle"
-        android:layout_marginRight="@dimen/margin_small_elements"
-        android:layout_marginBottom="@dimen/margin_bottom_middle"
+        android:layout_marginBottom="@dimen/margin_small_elements"
         android:layout_marginEnd="10dp"/>
 
     <TextView
         android:id="@+id/text_skill1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/img_skill1"
+        android:layout_toEndOf="@+id/img_skill1"
         android:text="@string/company_info"
-        android:layout_marginBottom="@dimen/margin_bottom_middle"
-        android:textSize="@dimen/text_small_size_ad_info"
-        />
+        android:layout_marginBottom="@dimen/margin_small_elements"
+        android:textSize="@dimen/text_standart_size"/>
 
     <ImageView
         android:id="@+id/img_skill2"
         android:layout_width="@dimen/img_info_label"
         android:layout_height="@dimen/img_info_label"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="@dimen/margin_bottom_middle"
-        android:layout_marginRight="@dimen/margin_small_elements"
+        android:layout_marginBottom="@dimen/margin_small_elements"
+        android:layout_marginEnd="@dimen/margin_small_elements"
         android:layout_below="@+id/text_skill1"
         android:background="@drawable/androidtry"/>
 
@@ -42,16 +39,17 @@
         android:layout_below="@+id/text_skill1"
         android:layout_toEndOf="@+id/img_skill1"
         android:text="@string/my_goal_text"
-        android:textSize="@dimen/text_small_size_ad_info"
-        android:layout_marginBottom="@dimen/margin_bottom_middle"/>
+        android:textSize="@dimen/text_standart_size"
+        android:layout_marginBottom="@dimen/margin_small_elements"/>
 
     <ImageView
         android:id="@+id/img_skill3"
         android:layout_width="@dimen/img_info_label"
         android:layout_height="@dimen/img_info_label"
-        android:layout_alignParentLeft="true"
-        android:layout_marginRight="@dimen/margin_bottom_middle"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="@dimen/margin_bottom_middle"
         android:layout_below="@id/img_skill2"
+        android:layout_marginBottom="@dimen/margin_small_elements"
         android:background="@drawable/dumbbellmy"/>
 
     <TextView
@@ -61,8 +59,8 @@
         android:layout_below="@+id/text_skill2"
         android:layout_toEndOf="@+id/img_skill3"
         android:text="@string/love_sport_text"
-        android:textSize="@dimen/text_small_size_ad_info"
-        android:layout_marginBottom="@dimen/margin_bottom_middle"/>
+        android:textSize="@dimen/text_standart_size"
+        android:layout_marginBottom="@dimen/margin_small_elements"/>
 
 
 </RelativeLayout>

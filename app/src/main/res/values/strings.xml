@@ -1,18 +1,133 @@
 <resources>
     <string name="app_name">Academy_Lesson1</string>
     <string name="enter_your_text_here">Enter your text here</string>
-    <string name="my_text">My text</string>
+    <string name="edit_prev_text">Entered text</string>
     <string name="email_btn">EMAIL</string>
     <string name="text_email_header">My opinion about app</string>
-    <string name="my_mail_address">n.zales99@gmail.com</string>
+    <string name="my_mail_address">xxxx@gmail.com</string>
     <string name="enter_yore_message">Enter yore message</string>
     <string name="send_message_text_btn">SEND MESSAGE</string>
-    <string name="big_info_about_me">Some text about bl bla blab lllllllllllll
-    llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
-    lllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
-    llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
-    llllllllllllllllllllllllllllllllllllllllllllllll</string>
+    <string name="big_info_about_me">I study on the android developer. There is an own project that is planned
+        to be developed and someday to be poured on in GooglePlay.
+        I am a fan of scrum, and I will fully share the values</string>
     <string name="company_info"> Analyst in some company</string>
     <string name="my_goal_text"> I want to be the android developer</string>
     <string name="love_sport_text"> I love sports</string>
+    <string name="category_panda">Panda World</string>
+    <string name="category_robots">Robot News</string>
+    <string name="category_augmented_reality">Augmented reality</string>
+    <string name="category_it_news">IT news</string>
+    <string name="category_fun">Let\'s fun</string>
+    <string name="preview_text_panda">During mating season, the solitary mammals bleat important information to each other through their dense bamboo habitat.</string>
+    <string name="robots_obg_news"> Robots can now pick up any object after inspecting it</string>
+    <string name="printer_obg_news"> Researchers develop 3D printed objects that can track and store how they are used</string>
+    <string name="ar_obg_news"> Apple confirms it has acquired Spektral, a Danish computer vision startup, for augmented reality technology</string>
+
+    <string name="full_text_panda">For solitary animals, giant pandas have an awful lot to say to one another.
+        Their vocal repertoire comprises more than a dozen
+     distinct grunts, barks and squeaks, most of which amount to some version of “leave me alone.”
+        But when mating season rolls around, both male and female giant pandas turn to their preferred
+        come-hithercall: a husky, rapid vibrato that’s commonly known as the bleat.
+        The bleat not only alerts other pandas to the presence of an available mate, it contains important
+        information about the vocalist’s size and identity.
+        Given the dense bamboo thicket that limits visual contact in most panda habitats and the brevity of
+        panda mating season — females ovulate just
+        once a year and can conceive for only a few days — the pandas’ ability to perceive the bleat is critical
+        to reproduction among this once-endangered species.
+
+        Now, researchers have determined that the bleat works best as a local call. A panda can discern aspects
+        of a caller’s identity. like its size, from a bleat within about
+        65 feet, but the caller’s gender is only perceptible within about 33 feet, according to a study published
+        Thursday in Scientific Reports.
+        Megan Owen, a conservation ecologist at the San Diego Zoo Institute for Conservation Research and an author
+        of the study, offered a human analogy for how this ability works.
+        “If you’re walking into a crowded room and someone calls out your name, there’s a certain point where you can
+        identify who that is, or maybe you can identify that it’s a male
+        or female that is calling your name,” she said. “There’s information that’s encoded in that call, but that
+        information degrades over distance.”
+        [Like the Science Times page on Facebook. | Sign up for the Science Times newsletter.]
+        To conduct the study, Dr. Owen and her colleagues — including Ben Charlton, another San Diego institute researcher
+        who has studied panda bleats — obtained recordings of giant
+        pandas from Chengdu, China, during breeding season. They then played those recordings through a speaker in a section
+        of the San Diego Zoo Safari Park that contains bamboo similar
+        in type and density to a typical panda habitat. By placing recording devices throughout the bamboo, the researchers
+        were able to capture and analyze the bleats from various distances.EDITORS’ PICKS
+        How Connected Is Your Community to Everywhere Else in America?-->
+ </string>
+
+    <string name="robots_text_news"> Humans have long been masters of dexterity, a skill that can largely be
+        credited to the help of our eyes. Robots, meanwhile, are still catching up.
+        Certainly there’s been some progress: For decades, robots in controlled
+        environments like assembly lines have been able to pick up the same object
+        over and over again. More recently, breakthroughs in computer vision have
+        enabled robots to make basic distinctions between objects. Even then, though,
+        the systems don’t truly understand objects’ shapes, so there’s little the robots
+        can do after a quick pick-up. In a new paper, researchers from MIT’s Computer
+        Science and Artificial Intelligence Laboratory (CSAIL), say that they’ve made a
+        key development in this area of work: a system that lets robots inspect random
+        objects, and visually understand them enough to accomplish specific tasks without
+        ever having seen them before.
+         The system, called Dense Object Nets (DON), looks at objects as collections of points that
+        serve as sort of visual roadmaps. This approach lets robots better understand and manipulate
+        items, and, most importantly, allows them to even pick up a specific object among a clutter
+        of similar — a valuable skill for the kinds of machines that companies like Amazon and Walmart use in their warehouses.
+        For example, someone might use DON to get a robot to grab onto a specific spot on an object,
+        say, the tongue of a shoe. From that, it can look at a shoe it has never seen before,
+        and successfully grab its tongue. </string>
+
+    <string name="printer_text_news"> Cheap and easily customizable, 3-D printed devices are perfect for
+        assistive technology, like prosthetics or "smart" pill bottles that can help patients remember
+        to take their daily medications.
+         But these plastic parts dont have electronics, which means they cant monitor how patients are using them.
+        Now engineers at the University of Washington have developed 3-D printed devices that can track and store
+        their own use -- without using batteries or electronics. Instead, this system uses a method called
+        backscatter, through which a device can share information by reflecting signals that have been
+        transmitted to it with an antenna.
+        "We're interested in making accessible assistive technology with 3-D printing, but we have no eas way
+        to know how people are using it," said co-author Jennifer Mankoff, a professor in the UW's Paul G.
+        Allen School of Computer Science Engineering. "Could we come up with a circuitless solution that
+        could be printed on consumer-grade, off-the-shelf printers and allow the device itself to collect
+        information? That's what we showed was possible in this paper."
+        The UW team will present its findings Oct. 15 at the ACM Symposium on User Interface Software and
+        Technologyin Berlin.Previously the team developed the first 3-D printed objects that connect to Wi-Fi
+        without electronics. These purely plastic devices can measure if a detergent bottle is running low and
+        then automatically order more online.</string>
+
+    <string name="ar_text_news"> On the heels of Apple  this morning inking a $600 million deal to acquire IP,
+        talent and licenses from Dialog Semiconductor in Europe, it has also confirmed another acquisition of a
+        smaller startup in the region.Apple has purchased Spektral, a computer vision company based out of
+        Denmark that has worked on segmentation technology, a more efficient way to “cut out” figures from their
+        backgrounds in digital images and videos, reportedly for over $30 million.
+
+          This type of technology can be used, for example, to make quicker and more accurate/realistic cut-out images in
+        augmented reality environments, but also for more standard applications like school photos. That was
+        actually the first market the startup targeted, in 2015, although it appeared to shift strategy after
+        that to build up IP and make deeper inroads into video. You can see a demo of how its technology works
+        at the bottom of this post.
+
+           Rumors of the deal started to surface yesterday, first in Danish financial newspaper Børsen, without confirmation
+        from Apple. We reached out, and Apple has today finally confirmed the deal with its standard statement:
+        “Apple buys smaller technology companies from time to time, and we generally do not discuss our purpose or plans.”
+
+          From what we understand, the acquisition happened a while back — which lines up with a LinkedIn profile for Toke
+        Jansen, who had been a co-founder of Spektral but now notes that as of December 2017 he has been a manager
+        of computational imaging at Apple.
+
+          Others associated with the company — including the other co-founder, Henrik Paltoft — have not updated their
+        profiles, so it’s unclear how many others have joined. Børsen reports that the deal includes the company’s
+        engineers and was in the region of 200 million Danish kroner, which is equivalent to around $31 million.
+       Spektral started  life as CloudCutout, built on algorithms from Jansen’s PhD. The startup initially pitched
+        its product as a cheaper and more efficient “green screen” technology, to remove primary images from their
+        plain (typically green) or standard-pattern backgrounds, with an early iteration of the product built by
+        training the system on over 100,000 professional cutouts.
+
+        Spectral’s first application may have been the fairly retro world of school pictures, but what’s most notable here
+        is what Spektral might contribute to Apple’s imaging business. That could be for applications that Apple has
+        yet to launch, but also to improve the quality of those that are already in the market, from legacy products
+        like PhotoBooth through to ARKit, the company’s platform for mobile development..</string>
+    <string name="title_activity_item_news_activity">item_news_activity</string>
+    <string name="news_btn">NEWS</string>
+    <string name="my_card_btn">MY CARD</string>
+    <string name="preview_btn">PREVIEW</string>
+    <string name="thread_text_btn">Thread</string>
 </resources>
