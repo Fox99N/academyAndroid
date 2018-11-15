@@ -53,6 +53,5 @@ public class NewsItemsActivity extends AppCompatActivity {
         super.onResume();
         super.onPostResume();
     }
-
 }
 
