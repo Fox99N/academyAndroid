@@ -53,4 +53,5 @@
         android:background="@color/colorAccent"
         android:text="@string/news_btn"
         android:textSize="@dimen/btn_text" />
+
 </LinearLayout>

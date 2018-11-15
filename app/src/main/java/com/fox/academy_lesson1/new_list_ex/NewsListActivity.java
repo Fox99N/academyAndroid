@@ -39,7 +39,7 @@ public class NewsListActivity extends AppCompatActivity implements NewsListAdapt
         Drawable horizontalDivider = ContextCompat.getDrawable(context, R.drawable.horizontal_divider);
         horizontalDecoration.setDrawable(horizontalDivider);
         recyclerView.addItemDecoration(horizontalDecoration);
-        adapterNewList.replaceItems(DataUtils.generateNews(context));
+       /* adapterNewList.replaceItems(DataUtils.generateNews(context));*/
     }
 
     @Override
@@ -93,19 +93,8 @@ public class NewsListActivity extends AppCompatActivity implements NewsListAdapt
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-    }
-
-    @Override
     public void onItemClick(NewsItem newsItem) {
         NewsItemsActivity.start(this, newsItem);
     }
-
 }
 
