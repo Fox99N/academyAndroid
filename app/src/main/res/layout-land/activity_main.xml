@@ -53,4 +53,14 @@
         android:background="@color/colorAccent"
         android:text="@string/news_btn"
         android:textSize="@dimen/btn_text" />
+
+    <Button
+        android:id="@+id/watch_news_btn"
+        android:layout_width="@dimen/btn_big_size"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_elements_standart"
+        android:background="@color/colorAccent"
+        android:text="@string/news_btn"
+        android:textSize="@dimen/btn_text" />
 </LinearLayout>
