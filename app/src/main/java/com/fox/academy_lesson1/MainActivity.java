@@ -10,11 +10,15 @@ import android.widget.TextView;
 import com.fox.academy_lesson1.new_list_ex.NewsListActivity;
 import com.fox.academy_lesson1.thread_training.ThreadActivity;
 
+import com.fox.academy_lesson1.networking_news.news_ui.NewsFromServerActivity;
+import com.fox.academy_lesson1.new_list_ex.NewsListActivity;
+import com.fox.academy_lesson1.thread_training.ThreadActivity;
+
 public class MainActivity extends AppCompatActivity {
-    private static final String EXTRA_MESSAGE = "EXTRA_MESS";
-    private Button myCardBtn;
-    private Button newsBtn;
-    private Button threadBtn;
+    public static final String EXTRA_MESSAGE = "EXTRA_MESS";
+    public Button myCardBtn;
+    public Button newsBtn;
+    public Button threadBtn;
     private TextView description;
     private EditText msgEditText;
     private Button previewBtn;
@@ -29,10 +33,11 @@ public class MainActivity extends AppCompatActivity {
         myCardBtn = (Button) findViewById(R.id.open_my_profile_btn);
         newsBtn = (Button) findViewById(R.id.watch_news_btn);
         threadBtn = (Button) findViewById(R.id.thread_btn);
+        NYTNews= (Button)findViewById(R.id.real_news_btn);
         previewBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openNewActivity();
+                openNewActivivity();
             }
         });
         myCardBtn.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +58,12 @@ public class MainActivity extends AppCompatActivity {
                 openThreadActivity();
             }
         });
+        NYTNews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openNewsNYT();
+            }
+        });
     }
 
     private void openMyCard() {
@@ -65,20 +76,27 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void openNewActivity() {
+    public void openNewActivivity() {
+
         Intent intent = new Intent(this, SecondActivity.class);
         String message = msgEditText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
 
-    private void openThreadActivity() {
+    public void openThreadActivity() {
         Intent intent = new Intent(this, ThreadActivity.class);
         String message = msgEditText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
 
+    public void openNewsNYT() {
+        Intent intent = new Intent(this, NewsFromServerActivity.class);
+        String message = msgEditText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+    }
     @Override
     protected void onResume() {
         super.onResume();

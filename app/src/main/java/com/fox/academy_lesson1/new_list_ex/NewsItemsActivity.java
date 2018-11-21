@@ -1,5 +1,6 @@
 package com.fox.academy_lesson1.new_list_ex;
 
+
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -9,10 +10,11 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.fox.academy_lesson1.R;
+import com.fox.academy_lesson1.R;
 
 
 public class NewsItemsActivity extends AppCompatActivity {
-    private static final String EXTRA_NEWS_ITEM = "ITEM_NEWS";
+    private final String EXTRA_NEWS_ITEM = "ITEM_NEWS";
     private ImageView imageNews;
     private TextView authorNews;
     private TextView previewNews;
@@ -53,5 +55,6 @@ public class NewsItemsActivity extends AppCompatActivity {
         super.onResume();
         super.onPostResume();
     }
+
 }
 

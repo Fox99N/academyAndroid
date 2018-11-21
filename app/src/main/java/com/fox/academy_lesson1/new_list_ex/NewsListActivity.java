@@ -18,7 +18,8 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 
-public class NewsListActivity extends AppCompatActivity implements NewsListAdapter.OnItemClickListener  {
+public class NewsListActivity extends AppCompatActivity implements NewsListAdapter.ItemClickListener {
+
     private Context context;
     private RecyclerView recyclerView;
     private NewsListAdapter adapterNewList;
@@ -33,14 +34,19 @@ public class NewsListActivity extends AppCompatActivity implements NewsListAdapt
         setContentView(R.layout.activity_news_list);
         context = getApplicationContext();
         recyclerView = findViewById(R.id.recycler_news_list);
+        progressBar = (ProgressBar)findViewById(R.id.news_list_progressbar);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         DividerItemDecoration horizontalDecoration = new DividerItemDecoration(recyclerView.getContext(),
                 DividerItemDecoration.VERTICAL);
         Drawable horizontalDivider = ContextCompat.getDrawable(context, R.drawable.horizontal_divider);
         horizontalDecoration.setDrawable(horizontalDivider);
         recyclerView.addItemDecoration(horizontalDecoration);
+        myAsyncTask = new MyAsyncTask();
+        myAsyncTask.execute();
+    }
 
-       /* adapterNewList.replaceItems(DataUtils.generateNews(context));*/
+    @Override
+    public void onItemClick(View view, int position) {
     }
 
     @Override
@@ -98,9 +104,13 @@ public class NewsListActivity extends AppCompatActivity implements NewsListAdapt
         NewsItemsActivity.start(this, newsItem);
     }
 
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
     @Override
-    public void onItemClick(NewsItem newsItem) {
-        NewsItemsActivity.start(this, newsItem);
+    protected void onRestart() {
+        super.onRestart();
     }
 }
 

@@ -61,5 +61,5 @@
         android:text="@string/love_sport_text"
         android:textSize="@dimen/text_standart_size"
         android:layout_marginBottom="@dimen/margin_small_elements"/>
-  
+
 </RelativeLayout>
