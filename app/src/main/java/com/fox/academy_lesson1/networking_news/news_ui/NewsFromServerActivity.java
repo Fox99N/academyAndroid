@@ -13,21 +13,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import com.fox.academy_lesson1.R;
 import com.fox.academy_lesson1.networking_news.RestApi;
 import com.fox.academy_lesson1.networking_news.dto.MultimediaDTO;
 import com.fox.academy_lesson1.networking_news.dto.NewsDTO;
 import com.fox.academy_lesson1.networking_news.dto.ResultDTO;
-
 import android.os.AsyncTask;
-
 import java.util.Arrays;
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
 
 
 public class NewsFromServerActivity extends AppCompatActivity {

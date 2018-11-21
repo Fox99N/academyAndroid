@@ -1,19 +1,17 @@
 package com.fox.academy_lesson1.new_list_ex;
 
+
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.fox.academy_lesson1.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,11 +73,11 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
             previewText.setText(newsItem.getPreviewText());
             textData.setText(newsItem.getPublishDate().toString());
             textDescription.setText(newsItem.getFullText());
-            itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
+
         }
     }
     public void replaceItems(@NonNull List<NewsItem> newItems) {
@@ -90,16 +88,6 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
 
     public interface OnItemClickListener {
         void onItemClick(@NonNull NewsItem newsItem);
-    if (clickListener != null) clickListener.onItemClick(itemView, getAdapterPosition());
-        }
-    }
-
-    private void openNewsActivity(NewsItem newsSeItem) {
-        Intent intent = new Intent(context, NewsItemsActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putSerializable(EXTRA_NEWS_ITEM, newsSeItem);
-        intent.putExtras(bundle);
-        context.startActivity(intent);
     }
 
     @Override
@@ -109,15 +97,5 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
 
     NewsItem getItem(int id) {
         return news.get(id);
-    }
-
-    public interface ItemClickListener {
-        void onItemClick(View view, int position);
-    }
-
-    NewsListAdapter(List<NewsItem> news, Context context) {
-        this.news = news;
-        this.context = context;
-        this.layoutInflater = LayoutInflater.from(context);
     }
 }

@@ -36,25 +36,5 @@ public class NewsItemFromServerActivity extends AppCompatActivity {
         super.onResume();
         super.onPostResume();
     }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-    }
 }
 

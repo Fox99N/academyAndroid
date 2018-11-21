@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView description;
     private EditText msgEditText;
     private Button previewBtn;
+    private Button NYTNews;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

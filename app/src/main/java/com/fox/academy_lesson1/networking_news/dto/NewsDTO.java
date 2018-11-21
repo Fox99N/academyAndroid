@@ -2,6 +2,8 @@ package com.fox.academy_lesson1.networking_news.dto;
 import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
+
+
 public class NewsDTO {
      String status;
      String copyright;

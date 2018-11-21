@@ -13,6 +13,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+
 public class RestApi {
     private static final String URL = "https://api.nytimes.com/svc/topstories/v2/";
     private static final String API_KEY = "b7844dbb0d25468bbc52ecadc6e59ef4";

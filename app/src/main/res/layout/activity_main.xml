@@ -60,4 +60,13 @@
         android:text="@string/thread_text_btn"
         android:textSize="@dimen/btn_text" />
 
+    <Button
+        android:id="@+id/real_news_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_elements_standart"
+        android:background="@color/colorAccent"
+        android:text="@string/thread_text_btn"
+        android:textSize="@dimen/btn_text" />
+
 </LinearLayout>

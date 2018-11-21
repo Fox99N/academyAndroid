@@ -11,13 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
 import com.fox.academy_lesson1.R;
 import com.fox.academy_lesson1.networking_news.dto.MultimediaDTO;
 import com.fox.academy_lesson1.networking_news.dto.ResultDTO;
 import com.fox.academy_lesson1.new_list_ex.NewsListAdapter;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +25,7 @@ public class NewsFromServerAdapter extends RecyclerView.Adapter<NewsFromServerAd
     private final Context context;
     private List<ResultDTO> resultDTO = new ArrayList<>();
     private final LayoutInflater layoutInflater;
-    private NewsListAdapter.ItemClickListener clickListener;
+    private ItemClicListner clickListener;
 
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
