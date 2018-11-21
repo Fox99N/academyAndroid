@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import com.fox.academy_lesson1.new_list_ex.NewsListActivity;
+import com.fox.academy_lesson1.thread_training.ThreadActivity;
 
 import com.fox.academy_lesson1.networking_news.news_ui.NewsFromServerActivity;
 import com.fox.academy_lesson1.new_list_ex.NewsListActivity;
@@ -20,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView description;
     private EditText msgEditText;
     private Button previewBtn;
-    private Button NYTNews;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openNewActivivity() {
+
         Intent intent = new Intent(this, SecondActivity.class);
         String message = msgEditText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
@@ -88,13 +90,13 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
+
     public void openNewsNYT() {
         Intent intent = new Intent(this, NewsFromServerActivity.class);
         String message = msgEditText.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
-
     @Override
     protected void onResume() {
         super.onResume();

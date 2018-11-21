@@ -19,6 +19,7 @@ import java.util.concurrent.TimeUnit;
 
 
 public class NewsListActivity extends AppCompatActivity implements NewsListAdapter.ItemClickListener {
+
     private Context context;
     private RecyclerView recyclerView;
     private NewsListAdapter adapterNewList;
@@ -30,8 +31,8 @@ public class NewsListActivity extends AppCompatActivity implements NewsListAdapt
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        context = getApplicationContext();
         setContentView(R.layout.activity_news_list);
+        context = getApplicationContext();
         recyclerView = findViewById(R.id.recycler_news_list);
         progressBar = (ProgressBar)findViewById(R.id.news_list_progressbar);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -99,6 +100,10 @@ public class NewsListActivity extends AppCompatActivity implements NewsListAdapt
     }
 
     @Override
+    public void onItemClick(NewsItem newsItem) {
+        NewsItemsActivity.start(this, newsItem);
+    }
+
     protected void onDestroy() {
         super.onDestroy();
     }
