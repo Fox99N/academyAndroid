@@ -14,7 +14,7 @@ import com.fox.academy_lesson1.R;
 
 
 public class NewsItemsActivity extends AppCompatActivity {
-    private final String EXTRA_NEWS_ITEM = "ITEM_NEWS";
+    private static final String EXTRA_NEWS_ITEM = "ITEM_NEWS";
     private ImageView imageNews;
     private TextView authorNews;
     private TextView previewNews;
@@ -55,6 +55,5 @@ public class NewsItemsActivity extends AppCompatActivity {
         super.onResume();
         super.onPostResume();
     }
-
 }
 

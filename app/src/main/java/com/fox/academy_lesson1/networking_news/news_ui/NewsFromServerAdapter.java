@@ -28,7 +28,7 @@ public class NewsFromServerAdapter extends RecyclerView.Adapter<NewsFromServerAd
     private final Context context;
     private List<ResultDTO> resultDTO = new ArrayList<>();
     private final LayoutInflater layoutInflater;
-    private NewsListAdapter.ItemClickListener clickListener;
+    private ItemClicListner clickListener;
 
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -60,9 +60,9 @@ public class NewsFromServerAdapter extends RecyclerView.Adapter<NewsFromServerAd
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View view = layoutInflater.inflate(R.layout.news_item_list_from_server, parent, false);
-            final ViewHolder holder = new ViewHolder(view);
-            holder.itemView.setOnClickListener(new View.OnClickListener() {
+        View view = layoutInflater.inflate(R.layout.news_item_list_from_server, parent, false);
+        final ViewHolder holder = new ViewHolder(view);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.e("holder.getAdapterPosition", String.valueOf(holder.getAdapterPosition()));

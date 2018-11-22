@@ -4,30 +4,31 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.fox.academy_lesson1.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHolder> {
     private static final String EXTRA_NEWS_ITEM = "ITEM_NEWS";
-    private final List<NewsItem> news = new ArrayList<>();
+    private final Context context;
+    private List<NewsItem> news = new ArrayList<>();
     private final LayoutInflater layoutInflater;
-    private final OnItemClickListener clickListener;
+    private  OnItemClickListener clickListener;
 
 
-    public NewsListAdapter(List<NewsItem> context, @NonNull Context clickListener) {
+    public NewsListAdapter(List<NewsItem> news, @NonNull Context context) {
+        this.news = news;
+        this.context = context;
         this.layoutInflater = LayoutInflater.from(context);
-        this.clickListener = clickListener;
+
     }
 
     @NonNull
@@ -44,6 +45,7 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
         });
         return holder;
     }
+
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.bind(news.get(position));
@@ -68,20 +70,21 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
             textDescription = itemView.findViewById(R.id.news_descriptions_txt);
         }
 
-        public void bind(NewsItem newsItem){
+        public void bind(NewsItem newsItem) {
             author.setText(newsItem.getAuthor());
             image.setImageResource(newsItem.getImageUrl());
             category.setText(newsItem.getCategory());
             previewText.setText(newsItem.getPreviewText());
             textData.setText(newsItem.getPublishDate().toString());
             textDescription.setText(newsItem.getFullText());
-            itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
+
         }
     }
+
     public void replaceItems(@NonNull List<NewsItem> newItems) {
         news.clear();
         news.addAll(newItems);
@@ -90,16 +93,6 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
 
     public interface OnItemClickListener {
         void onItemClick(@NonNull NewsItem newsItem);
-    if (clickListener != null) clickListener.onItemClick(itemView, getAdapterPosition());
-        }
-    }
-
-    private void openNewsActivity(NewsItem newsSeItem) {
-        Intent intent = new Intent(context, NewsItemsActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putSerializable(EXTRA_NEWS_ITEM, newsSeItem);
-        intent.putExtras(bundle);
-        context.startActivity(intent);
     }
 
     @Override
@@ -109,15 +102,5 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
 
     NewsItem getItem(int id) {
         return news.get(id);
-    }
-
-    public interface ItemClickListener {
-        void onItemClick(View view, int position);
-    }
-
-    NewsListAdapter(List<NewsItem> news, Context context) {
-        this.news = news;
-        this.context = context;
-        this.layoutInflater = LayoutInflater.from(context);
     }
 }

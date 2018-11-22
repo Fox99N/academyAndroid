@@ -60,7 +60,6 @@ public class RestApi {
                 .writeTimeout(TIMEOUT_IN_SECONDS, TimeUnit.SECONDS)
                 .readTimeout(TIMEOUT_IN_SECONDS, TimeUnit.SECONDS)
                 .build();
-
     }
 
     public NewsFindEndpoint newsDownload() {

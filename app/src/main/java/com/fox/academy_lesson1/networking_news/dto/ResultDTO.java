@@ -1,13 +1,9 @@
 package com.fox.academy_lesson1.networking_news.dto;
 
 import com.google.gson.annotations.SerializedName;
-
 import java.io.Serializable;
 import java.util.List;
 
-/**
- * Created by fox on 05.11.18.
- */
 
 public class ResultDTO implements Serializable{
     @SerializedName("section")
