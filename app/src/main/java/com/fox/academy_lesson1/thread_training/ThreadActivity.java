@@ -1,11 +1,10 @@
 package com.fox.academy_lesson1.thread_training;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.fox.academy_lesson1.R;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 
 public class ThreadActivity extends AppCompatActivity {
     private static final Object object = new Object();

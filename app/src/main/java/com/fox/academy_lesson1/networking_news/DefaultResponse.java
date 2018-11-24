@@ -1,5 +1,5 @@
 package com.fox.academy_lesson1.networking_news;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 
 

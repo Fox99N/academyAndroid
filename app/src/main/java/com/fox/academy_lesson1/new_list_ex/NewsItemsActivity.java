@@ -3,13 +3,12 @@ package com.fox.academy_lesson1.new_list_ex;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import com.fox.academy_lesson1.R;
 import com.fox.academy_lesson1.R;
 
 

@@ -3,8 +3,8 @@ package com.fox.academy_lesson1.networking_news.news_ui;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,10 +12,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.fox.academy_lesson1.R;
-import com.fox.academy_lesson1.networking_news.dto.MultimediaDTO;
 import com.fox.academy_lesson1.networking_news.dto.ResultDTO;
-import com.fox.academy_lesson1.new_list_ex.NewsListAdapter;
-import java.io.Serializable;
+
 import java.util.ArrayList;
 import java.util.List;
 

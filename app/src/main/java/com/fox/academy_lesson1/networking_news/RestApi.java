@@ -1,9 +1,8 @@
 package com.fox.academy_lesson1.networking_news;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import com.fox.academy_lesson1.networking_news.endpoint.NewsFindEndpoint;
 import java.io.IOException;
-import java.net.HttpURLConnection;
 import java.util.concurrent.TimeUnit;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;

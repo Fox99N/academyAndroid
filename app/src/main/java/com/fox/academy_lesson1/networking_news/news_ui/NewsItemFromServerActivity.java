@@ -1,6 +1,6 @@
 package com.fox.academy_lesson1.networking_news.news_ui;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.webkit.WebView;

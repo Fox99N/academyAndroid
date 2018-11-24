@@ -8,12 +8,12 @@
     tools:context="com.fox.academy_lesson1.new_list_ex.NewsListActivity"
     android:columnCount="2">
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_news_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clipToPadding="true"
         android:layout_margin="4dp">
-    </android.support.v7.widget.RecyclerView>
+    </androidx.recyclerview.widget.RecyclerView>
 
 </GridLayout>
