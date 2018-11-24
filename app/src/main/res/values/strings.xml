@@ -136,6 +136,7 @@
     <string name="dafault_topic_technology_text">Technology</string>
     <string name="choose_topic_text_title">Choose a topic</string>
     <string name="alert_cancel_btn">Cancel</string>
+    <string name="real_news_btn">REAL NEWS</string>
     <string-array name="topic_array">TOPIC Array
         <item one="Technology"></item>
         <item one="Opinion"></item>

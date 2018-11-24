@@ -66,7 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_elements_standart"
         android:background="@color/colorAccent"
-        android:text="@string/thread_text_btn"
+        android:text="@string/real_news_btn"
         android:textSize="@dimen/btn_text" />
 
 </LinearLayout>
