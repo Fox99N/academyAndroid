@@ -19,12 +19,6 @@ android {
         targetCompatibility 1.8
         sourceCompatibility 1.8
     }
-    configurations.all {
-        resolutionStrategy.force 'com.android.support:support-v4:26.1.0'
-        // the lib is old dependencies version;
-    }
-    productFlavors {
-    }
 }
 
 dependencies {
@@ -40,7 +34,8 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
     implementation 'com.squareup.okhttp3:okhttp:3.11.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:3.0.0-RC1'
-    implementation 'com.github.bumptech.glide:glide:4.6.1'
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
     //    ex6
     implementation 'androidx.room:room-runtime:2.1.0-alpha01'
     annotationProcessor "androidx.room:room-compiler:2.1.0-alpha01"

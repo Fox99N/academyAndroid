@@ -4,12 +4,15 @@ import java.util.List;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
 import static androidx.room.OnConflictStrategy.REPLACE;
 
 @Dao
 public interface NewsDao {
+    public abstract NewsDao newsDao();
+
     @Query("SELECT * FROM news")
     List<NewsEntity> getAll();
 
@@ -27,4 +30,7 @@ public interface NewsDao {
 
     @Query("SELECT * FROM news WHERE title IN (:titles)")
     List<NewsEntity> loadAllByTitles(String[] titles);
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    void insert(NewsEntity newsEntity);
 }

@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.fox.academy_lesson1.R;
+import com.fox.academy_lesson1.ex6_persistance.AppDatabase;
 import com.fox.academy_lesson1.networking_news.RestApi;
 import com.fox.academy_lesson1.networking_news.dto.MultimediaDTO;
 import com.fox.academy_lesson1.networking_news.dto.NewsDTO;
@@ -21,6 +22,8 @@ import com.fox.academy_lesson1.networking_news.dto.ResultDTO;
 import android.os.AsyncTask;
 
 import java.util.List;
+
+import androidx.room.Room;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -40,11 +43,14 @@ public class NewsFromServerActivity extends AppCompatActivity {
     @NonNull
     private Call<NewsDTO> searchRequest;
     private TextView newsTopic;
+    private static AppDatabase appDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_from_server);
+        appDatabase = Room.databaseBuilder(this, AppDatabase.class, "database")
+                      .build();
         newsFSpb = findViewById(R.id.news_frm_server_progress_bar);
         newsLoadError = findViewById(R.id.error_load_data_text);
         serverError = findViewById(R.id.error_server_text);
@@ -132,6 +138,9 @@ public class NewsFromServerActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         unbindUx();
+    }
+    public static AppDatabase getDatabase(){
+        return appDatabase;
     }
 
     private void loadNews() {

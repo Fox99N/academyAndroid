@@ -11,21 +11,22 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.fox.academy_lesson1.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHolder> {
     private static final String EXTRA_NEWS_ITEM = "ITEM_NEWS";
-    private final List<NewsItem> news = new ArrayList<>();
+    private Context context;
+    private List<NewsItem> news = new ArrayList<>();
     private final LayoutInflater layoutInflater;
-    private final OnItemClickListener clickListener;
+    private OnItemClickListener clickListener;
 
 
-    public NewsListAdapter(List<NewsItem> context, @NonNull Context clickListener) {
+    public NewsListAdapter(List<NewsItem> news, @NonNull Context context) {
+        this.news = news;
         this.layoutInflater = LayoutInflater.from(context);
-        this.clickListener = clickListener;
+        this.context = context;
     }
 
     @NonNull

@@ -14,18 +14,13 @@ public class NewsRepository {
     public NewsRepository(Context cotext) {
         this.context = cotext;
     }
-    Completable saveData(final List<NewsEntity> filmList) {
+    Completable saveData(final List<NewsEntity> newsList) {
         return Completable.fromCallable(new Callable<Void>() {
             @Override
             public Void call() throws Exception {
                 AppDatabase db = AppDatabase.getAppDatabase(context);
-
-                //db.filmDao().deleteAll();
-
-                NewsEntity[] news = filmList.toArray(new NewsEntity[filmList.size()]);
-
+                NewsEntity[] news = newsList.toArray(new NewsEntity[newsList.size()]);
                 db.newsDao().insertAll(news);
-
                 return null;
             }
         });
@@ -42,13 +37,11 @@ public class NewsRepository {
             }
         });
     }
-
-
+    
     Observable<List<NewsEntity>> getDataObservable() {
         AppDatabase db = AppDatabase.getAppDatabase(context);
 
-         return null;
-//         db.newsDao().getAll();
+         return (Observable<List<NewsEntity>>) db.newsDao().getAll();
 
     }
 }
