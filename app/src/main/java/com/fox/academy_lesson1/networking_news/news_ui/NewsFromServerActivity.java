@@ -6,6 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
@@ -15,6 +17,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.fox.academy_lesson1.R;
 import com.fox.academy_lesson1.ex6_persistance.AppDatabase;
+import com.fox.academy_lesson1.ex6_persistance.NewsViewModal;
 import com.fox.academy_lesson1.networking_news.RestApi;
 import com.fox.academy_lesson1.networking_news.dto.MultimediaDTO;
 import com.fox.academy_lesson1.networking_news.dto.NewsDTO;
@@ -44,6 +47,7 @@ public class NewsFromServerActivity extends AppCompatActivity {
     private Call<NewsDTO> searchRequest;
     private TextView newsTopic;
     private static AppDatabase appDatabase;
+    private NewsViewModal newsViewModal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +61,7 @@ public class NewsFromServerActivity extends AppCompatActivity {
         newsFromServerRecycler = findViewById(R.id.news_from_server_recycler);
         newsFromServerRecycler.setLayoutManager(new LinearLayoutManager(this));
         newsTopic = findViewById(R.id.choose_type_nesw_text);
+//        newsViewModal = ViewModelProvider.of(this).get(NewsViewModal.class);  TODO ошибка в методе
         newsTopic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

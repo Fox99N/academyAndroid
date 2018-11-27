@@ -1,6 +1,11 @@
 package com.fox.academy_lesson1.ex6_persistance;
 
 import android.content.Context;
+
+import androidx.annotation.NonNull;
+import androidx.lifecycle.LiveData;
+import androidx.room.RoomDatabase;
+import androidx.sqlite.db.SupportSQLiteDatabase;
 import io.reactivex.Completable;
 import io.reactivex.Observable;
 import io.reactivex.Single;
@@ -10,6 +15,8 @@ import java.util.concurrent.Callable;
 
 public class NewsRepository {
     private final Context context;
+    private NewsDao newsDao;
+    private LiveData<List<NewsEntity>> newsEntity;
 
     public NewsRepository(Context cotext) {
         this.context = cotext;
@@ -28,20 +35,20 @@ public class NewsRepository {
 
     Single<List<NewsEntity>> getData() {
 
-        return Single.fromCallable(new Callable<List<NewsEntity>>() {
-            @Override
-            public List<NewsEntity> call() throws Exception {
-                AppDatabase db = AppDatabase.getAppDatabase(context);
+        return Single.fromCallable(() -> {
+            AppDatabase db = AppDatabase.getAppDatabase(context);
 
-                return db.newsDao().getAll();
-            }
+            return db.newsDao().getAll();
         });
     }
-    
-    Observable<List<NewsEntity>> getDataObservable() {
+
+    LiveData<List<NewsEntity>> getDataObservable() {
         AppDatabase db = AppDatabase.getAppDatabase(context);
 
-         return (Observable<List<NewsEntity>>) db.newsDao().getAll();
+         return (LiveData<List<NewsEntity>>) db.newsDao().getAll();
 
+    }
+    public void insert (NewsEntity newsEntity) {
+        new NewsAsyncDao(newsDao).execute(newsEntity);
     }
 }
