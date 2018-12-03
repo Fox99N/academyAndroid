@@ -11,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.fox.academy_lesson1.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,6 +69,7 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
             textDescription = itemView.findViewById(R.id.news_descriptions_txt);
         }
 
+
         public void bind(NewsItem newsItem) {
             author.setText(newsItem.getAuthor());
             image.setImageResource(newsItem.getImageUrl());
@@ -77,11 +77,11 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
             previewText.setText(newsItem.getPreviewText());
             textData.setText(newsItem.getPublishDate().toString());
             textDescription.setText(newsItem.getFullText());
+
         }
 
         @Override
         public void onClick(View v) {
-
         }
     }
 
@@ -89,6 +89,8 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
         news.clear();
         news.addAll(newItems);
         notifyDataSetChanged();
+    }
+
     }
 
     public interface OnItemClickListener {

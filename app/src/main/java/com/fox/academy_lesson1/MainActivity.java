@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView description;
     private EditText msgEditText;
     private Button previewBtn;
-    private Button NYTNews;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
-
     @Override
     protected void onResume() {
         super.onResume();
