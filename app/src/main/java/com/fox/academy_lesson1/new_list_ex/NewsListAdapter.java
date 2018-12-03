@@ -22,7 +22,6 @@ public class NewsListAdapter extends RecyclerView.Adapter<NewsListAdapter.ViewHo
     private final LayoutInflater layoutInflater;
     private OnItemClickListener clickListener;
 
-
     public NewsListAdapter(List<NewsItem> news, @NonNull Context context) {
         this.news = news;
         this.layoutInflater = LayoutInflater.from(context);

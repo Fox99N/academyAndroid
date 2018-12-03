@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 import com.fox.academy_lesson1.R;
 import com.fox.academy_lesson1.networking_news.dto.ResultDTO;
 
@@ -23,7 +25,7 @@ public class NewsFromServerAdapter extends RecyclerView.Adapter<NewsFromServerAd
     private final Context context;
     private List<ResultDTO> resultDTO = new ArrayList<>();
     private final LayoutInflater layoutInflater;
-    private ItemClicListner clickListener;
+    private ItemClickListener clickListener;
 
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -88,7 +90,7 @@ public class NewsFromServerAdapter extends RecyclerView.Adapter<NewsFromServerAd
         this.layoutInflater = LayoutInflater.from(context);
     }
 
-    public interface ItemClicListner {
+    public interface ItemClickListener {
         void onItemClick(View view, int position);
     }
 

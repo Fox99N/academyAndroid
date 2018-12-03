@@ -7,7 +7,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
@@ -70,7 +69,7 @@ public class NewsFromServerActivity extends AppCompatActivity {
         });
                 myAsyncTask = new MyAsyncTask();
         myAsyncTask.execute();
-        loadNews();
+
     }
 
     private void showAlertDialog() {
@@ -116,11 +115,12 @@ public class NewsFromServerActivity extends AppCompatActivity {
         });
     }
 
-    private class MyAsyncTask extends AsyncTask<List<NewsDTO>, Void, List<NewsDTO>> {
+    private class MyAsyncTask extends AsyncTask<List<NewsDTO>, Void, List<NewsDTO>[]> {
 
         @Override
-        protected List<NewsDTO> doInBackground(List<NewsDTO>[] lists) {//TODO доделать метод загрузки данных не забыть убрать null
-            return null;
+        protected List<NewsDTO>[] doInBackground(List<NewsDTO>... lists) {//TODO доделать метод загрузки данных не забыть убрать null
+            loadNews();
+            return lists;
         }
 
         @Override
