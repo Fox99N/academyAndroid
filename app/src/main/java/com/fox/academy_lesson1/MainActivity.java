@@ -1,5 +1,6 @@
 package com.fox.academy_lesson1;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         myCardBtn = (Button) findViewById(R.id.open_my_profile_btn);
         newsBtn = (Button) findViewById(R.id.watch_news_btn);
         threadBtn = (Button) findViewById(R.id.thread_btn);
-        NYTNews= (Button)findViewById(R.id.real_news_btn);
+        NYTNews = (Button) findViewById(R.id.real_news_btn);
         previewBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,25 +102,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         super.onPostResume();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
     }
 }

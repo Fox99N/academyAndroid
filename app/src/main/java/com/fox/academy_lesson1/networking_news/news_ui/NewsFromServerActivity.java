@@ -13,18 +13,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import com.fox.academy_lesson1.R;
 import com.fox.academy_lesson1.networking_news.RestApi;
 import com.fox.academy_lesson1.networking_news.dto.MultimediaDTO;
 import com.fox.academy_lesson1.networking_news.dto.NewsDTO;
 import com.fox.academy_lesson1.networking_news.dto.ResultDTO;
-
 import android.os.AsyncTask;
-
 import java.util.Arrays;
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -60,21 +56,21 @@ public class NewsFromServerActivity extends AppCompatActivity {
                 showAlertDialog();
             }
         });
-                myAsyncTask = new MyAsyncTask();
+        myAsyncTask = new MyAsyncTask();
         myAsyncTask.execute();
         loadNews();
     }
 
     private void showAlertDialog() {
         LayoutInflater layoutInflater = LayoutInflater.from(getApplicationContext());
-       // View promts = layoutInflater.inflate(R.layout.allert_dialog_editmeasurements, null);//
+        // View promts = layoutInflater.inflate(R.layout.allert_dialog_editmeasurements, null);//
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
         alertDialog.setTitle(R.string.choose_topic_text_title);
         String[] topicks =  {"technology", "opinion", "politics", "business", "science", "health"};
         final String topic = " ";
         int checkedItem = 0;
         alertDialog.setSingleChoiceItems(topicks, checkedItem, (DialogInterface dialog, int which) -> {
-                });
+        });
         alertDialog.setPositiveButton("OK", (dialog, which) -> {
             String selectedItem = topicks[((AlertDialog) dialog).getListView().getCheckedItemPosition()];
             Log.d("string topic", selectedItem);
@@ -82,9 +78,9 @@ public class NewsFromServerActivity extends AppCompatActivity {
             newsTopic.setText(selectedItem);
             //TODO не забыть в апи поставить выбранную тему и  переделать откурыти в веб вью
         });
-         alertDialog.setNegativeButton(R.string.alert_cancel_btn, null);
-         AlertDialog dialog = alertDialog.create();
-         dialog.show();
+        alertDialog.setNegativeButton(R.string.alert_cancel_btn, null);
+        AlertDialog dialog = alertDialog.create();
+        dialog.show();
     }
 
     private void loadNewsWithChosenTopic(String topic) {
