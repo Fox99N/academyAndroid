@@ -40,7 +40,7 @@ public class NewsItemsActivity extends AppCompatActivity {
         }
     }
 
-    protected static void start(@NonNull Context context, @NonNull NewsItem newsItem) {
+    protected void start(@NonNull Context context, @NonNull NewsItem newsItem) {
         context.startActivity(new Intent(context, NewsItemsActivity.class).putExtra(EXTRA_NEWS_ITEM, newsItem));
     }
 

@@ -7,6 +7,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
@@ -16,12 +17,18 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import com.fox.academy_lesson1.R;
 import com.fox.academy_lesson1.ex6_persistance.AppDatabase;
+import com.fox.academy_lesson1.ex6_persistance.NewsEntity;
+import com.fox.academy_lesson1.ex6_persistance.NewsRepository;
 import com.fox.academy_lesson1.ex6_persistance.NewsViewModal;
 import com.fox.academy_lesson1.networking_news.RestApi;
 import com.fox.academy_lesson1.networking_news.dto.MultimediaDTO;
 import com.fox.academy_lesson1.networking_news.dto.NewsDTO;
 import com.fox.academy_lesson1.networking_news.dto.ResultDTO;
 import android.os.AsyncTask;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
+
+
 
 import java.util.List;
 
@@ -47,6 +54,7 @@ public class NewsFromServerActivity extends AppCompatActivity {
     private TextView newsTopic;
     private static AppDatabase appDatabase;
     private NewsViewModal newsViewModal;
+    NewsRepository newsRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +68,7 @@ public class NewsFromServerActivity extends AppCompatActivity {
         newsFromServerRecycler = findViewById(R.id.news_from_server_recycler);
         newsFromServerRecycler.setLayoutManager(new LinearLayoutManager(this));
         newsTopic = findViewById(R.id.choose_type_nesw_text);
-//        newsViewModal = ViewModelProvider.of(this).get(NewsViewModal.class);  TODO ошибка в методе
+       // newsViewModal = new ViewModelProvider(this).get(NewsViewModal.class);//TODO ошибка в методе
         newsTopic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,7 +127,12 @@ public class NewsFromServerActivity extends AppCompatActivity {
 
         @Override
         protected List<NewsDTO>[] doInBackground(List<NewsDTO>... lists) {//TODO доделать метод загрузки данных не забыть убрать null
-            loadNews();
+            if(newsRepository.getDataObservable() != null){
+                newsRepository.getDataObservable();
+            }
+                else{
+                loadNews();
+            }
             return lists;
         }
 
@@ -167,6 +180,7 @@ public class NewsFromServerActivity extends AppCompatActivity {
 
             }
         });
+
     }
 
     private void checkResponseAndShowState(@NonNull Response<NewsDTO> response) {
@@ -183,6 +197,8 @@ public class NewsFromServerActivity extends AppCompatActivity {
         newsFromServerRecycler.setAdapter(newsFromServerAdapter);
         showState(State.HasData);
         newsFromServerAdapter.notifyDataSetChanged();
+        newsRepository.deleteAll();
+        newsRepository.saveData(resultDTO);
     }
 
     private void showState(State state) {
